@@ -90,3 +90,45 @@ span{
 #student{
     left: 450px;
 }
+
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+
+/* #header{
+     height :10%;
+     width: 100%;
+     top: 10%;
+     background-color: black;
+     position: fixed;
+     color: white;
+
+}
+#leftSide{
+    height: 75%;
+    width: 15%;
+    top:10%;
+    position: fixed;
+}
+#rightSide{
+    height: 75%;
+    width: 15%;
+    top:10%;
+    background-color: white;
+    position: fixed;
+    left: 17%;
+    color: red;
+    border: solid 1px black;
+} */
+#topSpan{
+    top:15%;
+    width:80%;
+    left:17%;
+    position: fixed;
+
+}

@@ -28,7 +28,7 @@
             <form action=" " method ="post" id="student" class="input-group" >
                 <input type="text" class="input-field" name ="userID" placeholder="Student login Id" required>
                 <input type="password" class="input-field" name ="password" placeholder="Enter Password" required>
-                 <input type="submit" class="submit-btn" name="submit" value="LogIn">
+                 <input type="submit" class="submit-btn" name="submit" value="Login">
                  <br><br>
             </form>
         </div>
