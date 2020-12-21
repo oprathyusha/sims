@@ -91,12 +91,12 @@ span{
 }
 
 input[type=submit] {
-    padding:5px 15px; 
-    background:#ccc; 
-    border:0 none;
-    cursor:pointer;
+    padding: 10px 30px; 
+    background:linear-gradient( to right,#ff105f,#ffad06); 
+    border: 0;
+    cursor: pointer;
     -webkit-border-radius: 5px;
-    border-radius: 5px; 
+    border-radius: 30px; 
 }
 
 /* #header{
