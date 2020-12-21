@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <div >
+    <div class="hero">
         <div class="form-box">
         <div class="button-box">
         <div id="btn"></div>
