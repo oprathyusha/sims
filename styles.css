@@ -114,21 +114,21 @@ input[type=submit] {
     width: 15%;
     top:10%;
     position: fixed;
-}
-#rightSide{
+}*/
+ #rightSide{
     height: 75%;
-    width: 15%;
+    width: 50%;
     top:10%;
     background-color: white;
     position: fixed;
-    left: 17%;
+    left: 30%;
     color: red;
     border: solid 1px black;
-} */
-#topSpan{
+} 
+/* #topSpan{
     top:15%;
     width:80%;
     left:17%;
     position: fixed;
 
-}
+} */
