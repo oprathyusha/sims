@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Admin dashboard</title>
-        <link rel="stylesheet" href="styles.css?v=<?php echo time();?>">
+        <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time();?>">
        
     
        <?php
@@ -21,13 +21,13 @@
 <a href="logout.php">Logout<a>
 </center>
     </div>
-    <span id="topSpan"><marquee behavior="" direction="">This poratl is open till dec </marquee></span>
+    <span id="topSpan"><marquee behavior="" direction="">This portal is available from Dec 28 </marquee></span>
     <div id=leftSide>
      <form action="" method="post">
          <table>
             <tr>
                  <td>
-                     <input type="submit" name="searchStudent" value="search">
+                     <input type="submit" name="searchStudent" value="Search">
                  </td>
             </tr>
             <tr>
