@@ -7,7 +7,7 @@
 .hero{
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(students.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(students.jpg);
     background-position: center;
     background-size: cover;
     position: absolute;
@@ -17,15 +17,17 @@
     height: 480px;
     position: relative;
     margin: 6% auto;
-    background: #fcf1f1;
+    background: #fcf1f138;
     padding: 5px;
     overflow: hidden;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
 }
 .button-box{
     width:220px;
     margin:35px auto;
     position: relative;
-    box-shadow: 0 0 20px 9px #ff61241f;
+    box-shadow: 0 0 10px 9px #8181811f;
     border-radius: 30px;
 }
 .toggle-btn{
@@ -59,12 +61,15 @@
     border-left:0;
     border-top: 0;
     border-right: 0;
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid rgb(182, 180, 180);
     outline:none;
     background: transparent;
 }
+.input-field::placeholder{
+    color: black;
+}
 .submit-btn{
-    width: 85%;
+    width: 55%;
     padding: 10px 30px;
     cursor: pointer;
     display: block;
