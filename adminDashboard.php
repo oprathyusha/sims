@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Admin dashboard</title>
+        <title>Student Management System</title>
         <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time();?>">
+        <link rel = "icon" href =  "icon.ico" type = "image/x-icon">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
        
-    
        <?php
        session_start();
       
@@ -14,12 +17,21 @@
       
        ?>
     </head>
-    <body >
+    <body>
     <div id="header"><br>
-    <center><strong>Student management system &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>UserID:<?php echo$_SESSION['userid'];?>
-    &nbsp;&nbsp;&nbsp;Name:<?php echo $_SESSION['name'];?> 
-<a href="logout.php">Logout<a>
-</center>
+        <center>
+            <div class="logo">
+                Student Management System
+            </div>
+            <div class="info">
+                <b>UserID:&nbsp;</b><?php echo$_SESSION['userid'];?>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <b>Name:&nbsp;</b><?php echo $_SESSION['name'];?>
+            </div>
+            <div class="logout">
+                <a href="logout.php" onclick="logout()">Logout<a>
+            </div>
+        </center>
     </div>
     <span id="topSpan"><marquee behavior="" direction="">This portal is available from Dec 28 </marquee></span>
     <div id=leftSide>
@@ -56,15 +68,13 @@
             {
                 ?>
                 <center>
-                    <form action="" method="post">
-                        Enter USN to search:
-                        <input type="text" name="USN">
-                        <input type="submit" name="searchStudentByUSN" value="Search">
-
+                    <form action="" method="post" id="search-modify">
+                        <b>Enter USN to search:</b>
+                        <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
+                        <input type="submit" name="searchStudentByUSN" value="Search" id="search-placeholder">
                     </form><br><br>
                 </center>
-                <?php
-                
+                <?php  
             }
             if(isset($_POST['searchStudentByUSN']))
              {
@@ -72,9 +82,8 @@
                 $query_run=mysqli_query($connection,$query);
                 while ($row = mysqli_fetch_assoc($query_run))
                 {
-                    
 						?>
-						<table>
+						<table class="data">
 							<tr>
 								<td>
 									<b>Roll No:</b>
@@ -90,13 +99,10 @@
 								<td>
 									<input type="text" value="<?php echo $row['firstName']?>" disabled>
 								</td>
-							</tr>
-						
-							<tr>
-								
+                            </tr>						
 							<tr>
 								<td>
-									<b>Mobile:</b>
+									<b>Phone No:</b>
 								</td> 
 								<td>
 									<input type="text" value="<?php echo $row['phoneNumber']?>" disabled>
@@ -110,20 +116,26 @@
 									<input type="text" value="<?php echo $row['email']?>" disabled>
 								</td>
 							</tr>
-							
-							
 						</table>
 						<?php
 					}
 				}
 			?>
-                
-             
-        
-            
-            
         </div>
-
     </div>
+    <script>
+        function logout(){
+        var reallyLogout=confirm("Do you really want to log out?");
+        if(reallyLogout){
+            location.href="logout.php";
+            }
+        }
+        var el = document.getElementById("logout");
+        if (el.addEventListener) {
+                el.addEventListener("click", logoutfunction, false);
+            } else {
+                el.attachEvent('onclick', logoutfunction);
+        }  
+    </script>
     </body>
 </html>

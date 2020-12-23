@@ -4,8 +4,9 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin and Student login form</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Student Management System</title>
+    <link rel = "icon" href =  "icon.ico" type = "image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -24,7 +25,6 @@
                 <br><br>
              <input type="submit" class="submit-btn" name="adminSubmit" value="logIn">
             </form>
-            
             <form action=" " method ="post" id="student" class="input-group" >
                 <input type="text" class="input-field" name ="userID" placeholder="Student login Id" required>
                 <input type="password" class="input-field" name ="password" placeholder="Enter Password" required>
@@ -32,7 +32,11 @@
                  <br><br>
             </form>
         </div>
-       
+    </div>
+    <div class="credits">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
     </div>
     <script>
         var x= document.getElementById("admin");
@@ -52,8 +56,5 @@
     </script>
     <?php include "adminLogin.php"?>
     <?php include "studentLogin.php"?>
-
-
-   
 </body>
 </html>
