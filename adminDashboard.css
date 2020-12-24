@@ -34,7 +34,6 @@ input{
     background-color: white;
     position: absolute;
     left: 30%;
-    color: red;
     border: solid 1px black;
     border-radius: 10px;
 }
@@ -118,7 +117,17 @@ marquee{
     top:10%;
     background-color: white;
     left: 50%;
-    color: red;
     border: solid 1px black;
     border-radius: 10px;
+}
+.attendance-data input{
+    color: black;
+    margin-left: 70px;
+    background: white;
+    border-radius: 0px;
+    cursor: not-allowed;
+}
+.attendance-data{
+    transform: translateY(-323px);
+    margin-left: 850px;
 }
