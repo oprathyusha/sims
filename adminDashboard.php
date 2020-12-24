@@ -124,18 +124,16 @@
         </div>
     </div>
     <script>
-        function logout(){
-        var reallyLogout=confirm("Do you really want to log out?");
-        if(reallyLogout){
-            location.href="logout.php";
-            }
-        }
+        /*function logout(){
+        var reallyLogout=confirm("Do you really want to log out?"); 
+        confirmed=confirm('Are you sure you want to log out?');
+        (confirmed) ? return true: return false);
         var el = document.getElementById("logout");
         if (el.addEventListener) {
                 el.addEventListener("click", logoutfunction, false);
             } else {
                 el.attachEvent('onclick', logoutfunction);
-        }  
+        }  */
     </script>
     </body>
 </html>

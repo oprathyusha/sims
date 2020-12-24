@@ -101,12 +101,6 @@ span{
     color: white;
     background: rgb(86, 60, 133);
   }
-.line1{
-    margin-top: 0%;
-    background: white;
-    width: 10%;
-    height: 10%;
-}
 @media screen and (max-width : 786px){
     body{
         align-items: center;

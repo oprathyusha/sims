@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
     <link rel = "icon" href =  "icon.ico" type = "image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
@@ -32,11 +32,6 @@
                  <br><br>
             </form>
         </div>
-    </div>
-    <div class="credits">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
     </div>
     <script>
         var x= document.getElementById("admin");
