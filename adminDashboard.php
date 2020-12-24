@@ -64,13 +64,9 @@
             </table>
         </form>
     </div>
-<<<<<<< HEAD
-
-=======
     <div class="extra">
         
     </div> 
->>>>>>> 79274423e2abb962605d424177d8de5476fa80fe
     <div id="rightSide"><br><br>
         <div id="demo">
         <?php
@@ -147,8 +143,7 @@
                 
                         <!-- ----attendance table---                     -->
 
-                        <table class="data">
-                        <h1>attendance</h1>
+                        <table class="attendance-data">
                         <?php
                         $query1="select * from attendance where USN='$_POST[USN]'";
                         $query_run1 =mysqli_query($connection,$query1);
@@ -170,27 +165,18 @@
                             
                         <tr>
                             <td>
-                                <b>attendance percentage in <?php echo $row['semester']?></b>
+                                <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
                             </td> 
                             <td>
                                 <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
                             </td>
                         </tr>
-
-                      
-                    
-                    
                     </table>
                         <?php
                         }
                     }
-                }
-					
-				
+                }				
 			?>
-     
-
-
         <!-- ----------------------------edit student  ------------------------------------------        -->
         <?php
         if (isset($_POST['editStudent'])) {
@@ -289,22 +275,6 @@
     ?>
         </div>
     </div>
-
-
-
-    <!-- <script>
-        function logout() {
-            var reallyLogout = confirm("Do you really want to log out?");
-            confirmed = confirm('Are you sure you want to log out?');
-            (confirmed) ?
-            return true: return false);
-        var el = document.getElementById("logout");
-        if (el.addEventListener) {
-            el.addEventListener("click", logoutfunction, false);
-        } else {
-            el.attachEvent('onclick', logoutfunction);
-        }
-    </script> -->
 </body>
 
 </html>
