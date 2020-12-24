@@ -26,16 +26,16 @@ input{
     box-shadow: 0 0 2px 2px #d1d1d136;
 }
 #rightSide{
-    margin-top: 115px;
+    margin-top: 125px;
     margin-left: -165px;
-    height: 105%;
-    width: 50%;
+    height: 125%;
+    width: 70%;
     top:10%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;
     left: 30%;
-    border: solid 1px black;
-    border-radius: 10px;
+    overflow-y: scroll;
+    backdrop-filter: blur(5px);
 }
 .logo{
     margin-top: -20px;
@@ -94,40 +94,53 @@ marquee{
     border-radius: 15px;
 }
 .data{
-    margin-left: 20px;
+    margin-top: -20px;
+    margin-left: 30px;
     color: black;
 }
 .data input{
     margin-left: 50px;
-    background: white;
+    background: rgba(255, 255, 255, 0);
     border-radius: 0px;
+    border: none;
     color: black;
     cursor: not-allowed;
+}
+.edit-data{
+    margin-top: -20px;
+    margin-left: 30px;
+    color: black;
+}
+.edit-data input{
+    margin-left: 50px;
+    background: rgba(110, 110, 110, 0.281);
+    border-radius: 0px;
+    border-bottom: 1px;
+    border-color: black;
+    color: black;
+    cursor: text;
+}
+#save-data{
+    cursor: pointer;
+    background: linear-gradient( to right,rgb(190, 84, 123),rgb(86, 60, 133));
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 2px 2px #d1d1d136;
+    margin-left: 450px;
+    width: 20%;
+}
+h1{
+    margin-left: 30px;
+    margin-top: -20px;
+    text-decoration: underline;
+}
+.attendance{
+    margin-top: 5px;
+}
+.result{
+    margin-top: 5px;
 }
 ::selection {
     color: white;
     background: rgb(86, 60, 133);
   }
-.extra{
-    margin-top: 115px;
-    margin-left: 350px;
-    height: 105%;
-    width: 25%;
-    position: absolute;
-    top:10%;
-    background-color: white;
-    left: 50%;
-    border: solid 1px black;
-    border-radius: 10px;
-}
-.attendance-data input{
-    color: black;
-    margin-left: 70px;
-    background: white;
-    border-radius: 0px;
-    cursor: not-allowed;
-}
-.attendance-data{
-    transform: translateY(-323px);
-    margin-left: 850px;
-}
