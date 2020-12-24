@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time(); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -27,12 +28,12 @@
                 Student Management System
             </div>
             <div class="info">
-                <b>UserID:&nbsp;</b><?php echo $_SESSION['userid']; ?>
+                <b><i class="fa fa-user" aria-hidden="true"></i> UserID:&nbsp;</b><?php echo $_SESSION['userid']; ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <b>Name:&nbsp;</b><?php echo $_SESSION['name']; ?>
             </div>
             <div class="logout">
-                <a href="logout.php" onclick="logout()">Logout<a>
+                <a href="logout.php" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout<a>
             </div>
         </center>
     </div>
@@ -160,10 +161,9 @@
                                 <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
                             </td>
                         </tr>
-                    </table>
+                        </table>
                         <?php
                         }
-                        
                         ?> 
 
                         <!-- -------result table------- -->
@@ -222,7 +222,7 @@
                                 <b>USN:</b>
                             </td>
                             <td>
-                                <input type="text" name="USN" value="<?php echo $row['USN'] ?>">
+                                <input type="text" name="USN" value="<?php echo $row['USN'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -230,7 +230,7 @@
                                 <b>First Name:</b>
                             </td>
                             <td>
-                                <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>">
+                                <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -238,7 +238,7 @@
                                 <b>Last Name:</b>
                             </td>
                             <td>
-                                <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>">
+                                <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -246,7 +246,7 @@
                                 <b>Phone No:</b>
                             </td>
                             <td>
-                                <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>">
+                                <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -254,7 +254,7 @@
                                 <b>Email:</b>
                             </td>
                             <td>
-                                <input type="text" name="email" value="<?php echo $row['email'] ?>">
+                                <input type="text" name="email" value="<?php echo $row['email'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -262,7 +262,7 @@
                                 <b>DOB:</b>
                             </td>
                             <td>
-                                <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>">
+                                <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>" required>
                             </td>
                         </tr>
                     </table>
@@ -287,7 +287,7 @@
                         </tr>
                            <?php
                          }       
-                           ?>    
+                           ?>
                           
                     </table>
                     <!-- -------result table------- -->
