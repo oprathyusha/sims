@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time(); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -27,12 +28,12 @@
                 Student Management System
             </div>
             <div class="info">
-                <b>UserID:&nbsp;</b><?php echo $_SESSION['userid']; ?>
+                <b><i class="fa fa-user" aria-hidden="true"></i> UserID:&nbsp;</b><?php echo $_SESSION['userid']; ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <b>Name:&nbsp;</b><?php echo $_SESSION['name']; ?>
             </div>
             <div class="logout">
-                <a href="logout.php" onclick="logout()">Logout<a>
+                <a href="logout.php" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout<a>
             </div>
         </center>
     </div>
@@ -88,9 +89,115 @@
                 </center>
                 <?php
             }
-            if (isset($_POST['searchStudentByUSN'])) {
-                $query = "select * from student where USN='$_POST[USN]'";
-                $query_run = mysqli_query($connection, $query);
+            if(isset($_POST['searchStudentByUSN']))
+             {
+                $query="select * from student where USN='$_POST[USN]'";
+                $query_run=mysqli_query($connection,$query);
+               
+                while ($row = mysqli_fetch_assoc($query_run))
+                {
+                        ?>
+                        <!-- ----details table----->
+						 <table class="data">
+                         <h1 class="details">Details:</h1>
+							<tr>
+								<td>
+									<b>USN:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['USN']?>" disabled>
+								</td>
+							</tr>
+							 <tr>
+								<td>
+									<b>First Name:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['firstName']?>" disabled>
+								</td>
+                            </tr>
+                            <tr>
+								<td>
+									<b>Last  Name:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['lastName']?>" disabled>
+								</td>
+                            </tr>								
+							<tr>
+								<td>
+									<b>Phone No:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['phoneNumber']?>" disabled>
+								</td>
+							</tr> 
+							 <tr>
+								<td>
+									<b>Email:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['email']?>" disabled>
+								</td>
+							</tr>
+                            <tr>
+								<td>
+									<b>DOB:</b>
+                                </td> 
+                                <td>
+                                    <input type="text" value="<?php echo $row['DOB'] ?>" disabled>
+                                </td>
+							</tr>              
+                        </table> 
+                <?php
+                }
+                ?>
+                        <!-- ----attendance table----->
+
+                        <table class="data">
+                        <h1 class="attendance">Attendance:</h1>
+                        <?php
+                        $query1="select * from attendance where USN='$_POST[USN]'";
+                        $query_run1 =mysqli_query($connection,$query1);
+                        
+                        while ($row = mysqli_fetch_assoc($query_run1))
+                        {
+                            ?>
+                        <tr>
+                            <td>
+                                <b>Attendance percentage in sem <?php echo $row['semester']?>:</b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
+                            </td>
+                        </tr>
+                        </table>
+                        <?php
+                        }
+                        ?> 
+
+                        <!-- -------result table------- -->
+
+                        <table class="data">
+                        <h1 class="result">Result:</h1>
+                        <?php
+                        $query2="select * from result where USN='$_POST[USN]'";
+                        $query_run2 =mysqli_query($connection,$query2);
+                        
+                        while ($row = mysqli_fetch_assoc($query_run2))
+                        {
+                            ?>
+                            
+                            <tr>
+                            <td>
+                                <b>sgpa in <?php echo $row['semester']?></b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['sgpa']?>" disabled>
+                            </td>
+                        </tr>
+                    </table>
+                        <?php
 
                 while ($row = mysqli_fetch_assoc($query_run)) {
                 ?>
@@ -102,7 +209,7 @@
                                 <b>USN:</b>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['USN'] ?>" disabled>
+                                <input type="text" name="USN" value="<?php echo $row['USN'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -110,7 +217,7 @@
                                 <b>First Name:</b>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['firstName'] ?>" disabled>
+                                <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -118,7 +225,7 @@
                                 <b>Last Name:</b>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['lastName'] ?>" disabled>
+                                <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -126,7 +233,7 @@
                                 <b>Phone No:</b>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['phoneNumber'] ?>" disabled>
+                                <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -134,7 +241,7 @@
                                 <b>Email:</b>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['email'] ?>" disabled>
+                                <input type="text" name="email" value="<?php echo $row['email'] ?>" required>
                             </td>
                         </tr>
                         <tr>
@@ -142,7 +249,7 @@
                                 <b>DOB:</b>
                             </td>
                             <td>
-                                <input type="text" value="<?php echo $row['DOB'] ?>" disabled>
+                                <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>" required>
                             </td>
                         </tr>
                     <?php
@@ -296,20 +403,21 @@
                         <?php
                         $query1 = "select * from attendance where USN='$_POST[USN]'";
                         $query_run1 = mysqli_query($connection, $query1);
-                        while ($row = mysqli_fetch_assoc($query_run1)) {
+                        while ($row = mysqli_fetch_assoc($query_run1)) 
+                        {
                         ?>
                             <tr>
-                                <td>
-                                    <b>Attendance percentage in <?php echo $row['semester'] ?> sem:</b>
-                                </td>
-                                <td>
-                                    <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise'] ?>" disabled>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-
+                            <td>
+                                <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
+                            </td>
+                        </tr>
+                           <?php
+                         }       
+                           ?>
+                          
                     </table>
                     <!-- -------result table------- -->
                     <table class="edit-data">
@@ -318,7 +426,8 @@
                         $query2 = "select * from result where USN='$_POST[USN]'";
                         $query_run2 = mysqli_query($connection, $query2);
 
-                        while ($row = mysqli_fetch_assoc($query_run2)) {
+                        while ($row = mysqli_fetch_assoc($query_run2)) 
+                        {
                         ?>
 
                             <tr>

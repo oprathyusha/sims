@@ -23,8 +23,6 @@ input{
     border: none;
     transform: scale(1.3);
     cursor: pointer;
-    box-shadow: 0 0 2px 2px #d1d1d136;
-   
 }
 #rightSide{
     margin-top: 125px;
@@ -45,7 +43,6 @@ input{
 }
 ::-webkit-scrollbar-thumb {
     background: rgba(85, 85, 85, 0.8); 
-    -webkit-box-shadow: inset 0 0 6px rgba(87, 87, 87, 0.5); 
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 	background: rgba(65, 65, 65, 0.4); 
@@ -92,7 +89,7 @@ marquee{
     margin-top: -1px;
     margin-left: -35px;
     margin-right: 10px;
-    width: 30%;
+    width: 35%;
     border-radius: 0px;
     background: white;
     cursor: text;
@@ -116,6 +113,7 @@ marquee{
     background: rgba(255, 255, 255, 0);
     border-radius: 0px;
     border: none;
+    box-shadow: none;
     color: black;
     cursor: not-allowed;
 }
@@ -128,7 +126,8 @@ marquee{
     margin-left: 50px;
     background: rgba(110, 110, 110, 0.281);
     border-radius: 0px;
-    border-bottom: 1px;
+    border: none;
+    box-shadow: none;
     border-color: black;
     color: black;
     cursor: text;
