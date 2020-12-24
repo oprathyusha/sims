@@ -138,6 +138,7 @@
 								</td>
 							</tr>              
                         </table> 
+                
                         <!-- ----attendance table---                     -->
 
                         <table class="data">
@@ -146,7 +147,8 @@
                         $query1="select * from attendance where USN='$_POST[USN]'";
                         $query_run1 =mysqli_query($connection,$query1);
                         
-                        while ($row = mysqli_fetch_assoc($query_run1)){
+                        while ($row = mysqli_fetch_assoc($query_run1))
+                        {
                             ?>
                             
                             <tr>
@@ -175,8 +177,10 @@
                     </table>
                         <?php
                         }
-					}
-				}
+                    }
+                }
+					
+				
 			?>
      
 
@@ -282,7 +286,7 @@
 
 
 
-    <script>
+    <!-- <script>
         function logout() {
             var reallyLogout = confirm("Do you really want to log out?");
             confirmed = confirm('Are you sure you want to log out?');
@@ -294,7 +298,7 @@
         } else {
             el.attachEvent('onclick', logoutfunction);
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
