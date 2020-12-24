@@ -66,9 +66,7 @@
             </table>
         </form>
     </div>
-    <div id="rightSide"><br><br>
-        <div id="demo">
-
+   
 
 
             <!-- -------------------------------------------search student------------------------------------------------- -->
@@ -76,385 +74,285 @@
 
 
 
+            <div id="rightSide"><br><br>
+        <div id="demo">
 
-            <?php
-            if (isset($_POST['searchStudent'])) {
-            ?>
-                <center>
-                    <form action="" method="post" id="search-modify">
-                        <b>Enter USN to search:</b>
-                        <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
-                        <input type="submit" name="searchStudentByUSN" value="Search" id="search-placeholder">
-                    </form><br><br>
-                </center>
-                <?php
-            }
-            if(isset($_POST['searchStudentByUSN']))
-             {
-                $query="select * from student where USN='$_POST[USN]'";
-                $query_run=mysqli_query($connection,$query);
+        <?php
+    if (isset($_POST['searchStudent'])) {
+    ?>
+        <center>
+            <form action="" method="post" id="search-modify">
+                <b>Enter USN to edit:</b>
+                <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
+                <input type="submit" name="searchStudentByUSN" value="Search" id="search-placeholder">
+            </form><br><br>
+        </center>
+        <?php
+    }
+    if (isset($_POST['searchStudentByUSN'])) 
+    {
+        $query = "select * from student where USN='$_POST[USN]'";
+        $query_run = mysqli_query($connection, $query);
+
+        while ($row = mysqli_fetch_assoc($query_run))
+         {
+        ?>
+          
+                <table class="edit-data">
+                    <h1 class="details">Details:</h1>
+                    <tr>
+                        <td>
+                            <b>USN:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="USN" value="<?php echo $row['USN'] ?>" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>First Name:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Last Name:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>" disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Phone No:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>"disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Email:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="email" value="<?php echo $row['email'] ?>"disabled>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>DOB:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>"disabled>
+                        </td>
+                    </tr>
                
-                while ($row = mysqli_fetch_assoc($query_run))
-                {
-                        ?>
-                        <!-- ----details table----->
-						 <table class="data">
-                         <h1 class="details">Details:</h1>
-							<tr>
-								<td>
-									<b>USN:</b>
-								</td> 
-								<td>
-									<input type="text" value="<?php echo $row['USN']?>" disabled>
-								</td>
-							</tr>
-							 <tr>
-								<td>
-									<b>First Name:</b>
-								</td> 
-								<td>
-									<input type="text" value="<?php echo $row['firstName']?>" disabled>
-								</td>
-                            </tr>
-                            <tr>
-								<td>
-									<b>Last  Name:</b>
-								</td> 
-								<td>
-									<input type="text" value="<?php echo $row['lastName']?>" disabled>
-								</td>
-                            </tr>								
-							<tr>
-								<td>
-									<b>Phone No:</b>
-								</td> 
-								<td>
-									<input type="text" value="<?php echo $row['phoneNumber']?>" disabled>
-								</td>
-							</tr> 
-							 <tr>
-								<td>
-									<b>Email:</b>
-								</td> 
-								<td>
-									<input type="text" value="<?php echo $row['email']?>" disabled>
-								</td>
-							</tr>
-                            <tr>
-								<td>
-									<b>DOB:</b>
-                                </td> 
-                                <td>
-                                    <input type="text" value="<?php echo $row['DOB'] ?>" disabled>
-                                </td>
-							</tr>              
-                        </table> 
+            <?php
+        }
+            ?>
+            <tr>
+                <td>
+                <h1 class="attendance">Attendance:</h1>
                 <?php
-                }
+                $query1 = "select * from attendance where USN='$_POST[USN]'";
+                $query_run1 = mysqli_query($connection, $query1);
+                while ($row = mysqli_fetch_assoc($query_run1)) {
                 ?>
-                        <!-- ----attendance table----->
-
-                        <table class="data">
-                        <h1 class="attendance">Attendance:</h1>
-                        <?php
-                        $query1="select * from attendance where USN='$_POST[USN]'";
-                        $query_run1 =mysqli_query($connection,$query1);
-                        
-                        while ($row = mysqli_fetch_assoc($query_run1))
-                        {
-                            ?>
-                        <tr>
-                            <td>
-                                <b>Attendance percentage in sem <?php echo $row['semester']?>:</b>
-                            </td> 
-                            <td>
-                                <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
-                            </td>
-                        </tr>
-                        </table>
-                        <?php
-                        }
-                        ?> 
-
-                        <!-- -------result table------- -->
-
-                        <table class="data">
-                        <h1 class="result">Result:</h1>
-                        <?php
-                        $query2="select * from result where USN='$_POST[USN]'";
-                        $query_run2 =mysqli_query($connection,$query2);
-                        
-                        while ($row = mysqli_fetch_assoc($query_run2))
-                        {
-                            ?>
-                            
-                            <tr>
-                            <td>
-                                <b>sgpa in <?php echo $row['semester']?></b>
-                            </td> 
-                            <td>
-                                <input type="text" value="<?php echo $row['sgpa']?>" disabled>
-                            </td>
-                        </tr>
-                    </table>
-                        <?php
-
-                while ($row = mysqli_fetch_assoc($query_run)) {
-                ?>
-                    <!-- ----details table----->
-                    <table class="data">
-                        <h1 class="details">Details:</h1>
-                        <tr>
-                            <td>
-                                <b>USN:</b>
-                            </td>
-                            <td>
-                                <input type="text" name="USN" value="<?php echo $row['USN'] ?>" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>First Name:</b>
-                            </td>
-                            <td>
-                                <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Last Name:</b>
-                            </td>
-                            <td>
-                                <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Phone No:</b>
-                            </td>
-                            <td>
-                                <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>Email:</b>
-                            </td>
-                            <td>
-                                <input type="text" name="email" value="<?php echo $row['email'] ?>" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <b>DOB:</b>
-                            </td>
-                            <td>
-                                <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>" required>
-                            </td>
-                        </tr>
-                    <?php
-                }
-                    ?>
-
-
-                    <!-- ----attendance table----->
-
-
                     <tr>
                         <td>
-                            <h1 class="attendance">Attendance:</h1>
-                            <?php
-                            $query1 = "select * from attendance where USN='$_POST[USN]'";
-                            $query_run1 = mysqli_query($connection, $query1);
-
-                            while ($row = mysqli_fetch_assoc($query_run1)) {
-                            ?>
-
-                    <tr>
-                        <td>
-                            <b>Attendance percentage in sem <?php echo $row['semester'] ?>:</b>
+                            <b>Attendance percentage in <?php echo $row['semester'] ?> sem </b> 
                         </td>
                         <td>
                             <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise'] ?>" disabled>
                         </td>
                     </tr>
-                    </td>
-                    </tr>
-
-
-
                 <?php
-                            }
-
+                }
                 ?>
+                </td>
+            </tr>
+            <tr>
+            </td>
+            <!-- -------result table------- -->
+            <table class="edit-data">
+                <h1 class="result">Result:</h1>
+                <?php
+                $query2 = "select * from result where USN='$_POST[USN]'";
+                $query_run2 = mysqli_query($connection, $query2);
 
-                <!-- -------result table------- -->
-                <tr>
-                        <td>
-                            <h1 class="result">Result:</h1>
-                            <?php
-                            $query1 = "select * from result where USN='$_POST[USN]'";
-                            $query_run1 = mysqli_query($connection, $query1);
-
-                            while ($row = mysqli_fetch_assoc($query_run1)) {
-                            ?>
+                while ($row = mysqli_fetch_assoc($query_run2)) {
+                ?>
 
                     <tr>
                         <td>
-                            <b>sgpa in sem <?php echo $row['semester'] ?>:</b>
+                            <b>sgpa in <?php echo $row['semester'] ?></b>
                         </td>
                         <td>
-                            <input type="text" value="<?php echo $row['sgpa'] ?>" disabled>
+                            <input type="text" value="<?php echo $row['sgpa'] ?>" >
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+                <tr>
+                    <td>
+                        <input id="save-data" type="submit" name="edit" value="save">
+                    </td>
+                </tr>
+            </td>
+            </tr>
+            </table>
+        <?php
+    }
+
+        ?>
+
+
+
+
+    <!-- ----------------------------edit student  ---------------------------------------------------------        -->
+
+
+    <?php
+    if (isset($_POST['editStudent'])) {
+    ?>
+        <center>
+            <form action="" method="post" id="search-modify">
+                <b>Enter USN to edit:</b>
+                <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
+                <input type="submit" name="editStudentByUSN" value="Search" id="search-placeholder">
+            </form><br><br>
+        </center>
+        <?php
+    }
+    if (isset($_POST['editStudentByUSN'])) 
+    {
+        $query = "select * from student where USN='$_POST[USN]'";
+        $query_run = mysqli_query($connection, $query);
+
+        while ($row = mysqli_fetch_assoc($query_run))
+         {
+        ?>
+        <form action="editStudent.php" method="post">
+          
+                <table class="edit-data">
+                    <h1 class="details">Details:</h1>
+                    <tr>
+                        <td>
+                            <b>USN:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="USN" value="<?php echo $row['USN'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>First Name:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Last Name:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Phone No:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Email:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="email" value="<?php echo $row['email'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>DOB:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>">
+                        </td>
+                    </tr>
+               
+            <?php
+        }
+            ?>
+            <tr>
+                <td>
+                <h1 class="attendance">Attendance:</h1>
+                <?php
+                $query1 = "select * from attendance where USN='$_POST[USN]'";
+                $query_run1 = mysqli_query($connection, $query1);
+                while ($row = mysqli_fetch_assoc($query_run1)) {
+                ?>
+                    <tr>
+                        <td>
+                            <b>Attendance percentage in <?php echo $row['semester'] ?> sem:</b>
+                        </td>
+                        <td>
+                            <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise'] ?>">
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+                </td>
+            </tr>
+            <tr>
+            </td>
+            <!-- -------result table------- -->
+            <table class="edit-data">
+                <h1 class="result">Result:</h1>
+                <?php
+                $query2 = "select * from result where USN='$_POST[USN]'";
+                $query_run2 = mysqli_query($connection, $query2);
+
+                while ($row = mysqli_fetch_assoc($query_run2)) {
+                ?>
+
+                    <tr>
+                        <td>
+                            <b>sgpa in <?php echo $row['semester'] ?></b>
+                        </td>
+                        <td>
+                            <input type="text" value="<?php echo $row['sgpa'] ?>" >
                         </td>
                     </tr>
                     </td>
-                    </tr>
-
-
-
+            </tr>
                 <?php
-                            }
-
-                ?>
-            <?php
-            }
-
-            ?>
-
-
-            <!-- ----------------------------edit student  ---------------------------------------------------------        -->
-
-
-            <?php
-            if (isset($_POST['editStudent'])) {
-            ?>
-                <center>
-                    <form action="" method="post" id="search-modify">
-                        <b>Enter USN to edit:</b>
-                        <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
-                        <input type="submit" name="editStudentByUSN" value="Search" id="search-placeholder">
-                    </form><br><br>
-                </center>
-                <?php
-            }
-            if (isset($_POST['editStudentByUSN'])) {
-                $query = "select * from student where USN='$_POST[USN]'";
-                $query_run = mysqli_query($connection, $query);
-
-                while ($row = mysqli_fetch_assoc($query_run)) {
-                ?>
-                    <form action="editStudent.php" method="post">
-                        <table class="edit-data">
-                            <h1 class="details">Details:</h1>
-                            <tr>
-                                <td>
-                                    <b>USN:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name="USN" value="<?php echo $row['USN'] ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>First Name:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Last Name:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Phone No:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Email:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name="email" value="<?php echo $row['email'] ?>">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>DOB:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>">
-                                </td>
-                            </tr>
-                        </table>
-                    <?php
                 }
-                    ?>
-                    <table class="edit-data">
-                        <h1 class="attendance">Attendance:</h1>
-                        <?php
-                        $query1 = "select * from attendance where USN='$_POST[USN]'";
-                        $query_run1 = mysqli_query($connection, $query1);
-                        while ($row = mysqli_fetch_assoc($query_run1)) 
-                        {
-                        ?>
-                            <tr>
-                            <td>
-                                <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
-                            </td> 
-                            <td>
-                                <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
-                            </td>
-                        </tr>
-                           <?php
-                         }       
-                           ?>
-                          
-                    </table>
-                    <!-- -------result table------- -->
-                    <table class="edit-data">
-                        <h1 class="result">Result:</h1>
-                        <?php
-                        $query2 = "select * from result where USN='$_POST[USN]'";
-                        $query_run2 = mysqli_query($connection, $query2);
-
-                        while ($row = mysqli_fetch_assoc($query_run2)) 
-                        {
-                        ?>
-
-                            <tr>
-                                <td>
-                                    <b>sgpa in <?php echo $row['semester'] ?></b>
-                                </td>
-                                <td>
-                                    <input type="text" value="<?php echo $row['sgpa'] ?>" disabled>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                        <tr>
-                            <td>
-                                <input id="save-data" type="submit" name="edit" value="save">
-                            </td>
-                        </tr>
-                    </form>
-                <?php
-            }
-
                 ?>
+                <tr>
+                    <td>
+                        <input id="save-data" type="submit" name="edit" value="save">
+                    </td>
+                </tr>
+            
+            </table>
+            </form>
+        <?php
+    }
+
+        ?>
 
 
 
-                <!-- ----------------------------------------- add new student-------------------------------------------------------------- -->
+        <!-- ----------------------------------------- add new student-------------------------------------------------------------- -->
 
 
 
