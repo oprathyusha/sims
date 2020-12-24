@@ -151,18 +151,16 @@
                         {
                             ?>
                             
-                            <tr>
+                            <!-- <tr>
                             <td>
                                 <b>Attendance:</b>
                             </td> 
                             <td>
                                 <input type="text" value="<?php echo $row['semester']?>" disabled>
                             </td>
-                        </tr>
+                        </tr> -->
                     
-                        <tr>
-                            
-                        <tr>
+                        < <tr>
                             <td>
                                 <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
                             </td> 
@@ -289,14 +287,14 @@
                         while ($row = mysqli_fetch_assoc($query_run1))
                          {
                         ?>
-                            <tr>
-                                <td>
-                                    <b>attendace:</b>
-                                </td>
-                                <td>
-                                    <input type="text" value="<?php echo $row['semester'] ?>">
-                                </td>
-                            </tr>
+                            < <tr>
+                            <td>
+                                <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
+                            </td>
+                        </tr>
                            <?php
                          }       
                            ?>    
