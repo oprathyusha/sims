@@ -143,7 +143,7 @@
                             ?>
                             <tr>
                             <td>
-                                <b>attendace:</b>
+                                <b>Attendance:</b>
                             </td> 
                             <td>
                                 <input type="text" value="<?php echo $row['semester']?>" disabled>
