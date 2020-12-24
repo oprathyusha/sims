@@ -32,7 +32,7 @@ input{
     width: 50%;
     top:10%;
     background-color: white;
-    position: absolute;
+    position: fixed;
     left: 30%;
     color: red;
     border: solid 1px black;
@@ -44,7 +44,7 @@ input{
     font-weight: bold;
     letter-spacing: 0.2px;
     text-transform: capitalize;
-    font-size: 5vw;
+    font-size: 60px;
     color: white;
     transform: translateY(-5px);
 }
@@ -56,14 +56,13 @@ input{
     color: black;
 }
 .logout a{
+    text-decoration: none;
     color: azure;
     float: right;
-    padding: 8% 2% 2% 2%;
-    text-decoration: none;
-   transform: translateY(-120px);
+    transform: translateY(-120px);
 }
 marquee{
-    margin-top: 0%;
+    margin-top: 0px;
     transform: translateY(-20px);
 }
 #search-modify{
@@ -74,11 +73,9 @@ marquee{
     float: left;
     margin-left: 10px;
 }
-
 #search-modify input{
     transform: translateX(50px);
 }
-
 #usn-placeholder{
     margin-top: -1px;
     margin-left: -35px;
