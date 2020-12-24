@@ -61,7 +61,9 @@
          </table>
      </form>
     </div>
-    
+    <div class="extra">
+        
+    </div> 
     <div id="rightSide"><br><br>
         <div id="demo">
         <?php
