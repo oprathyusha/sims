@@ -27,7 +27,7 @@ input{
 }
 #rightSide{
     margin-top: 115px;
-    margin-left: -65px;
+    margin-left: -165px;
     height: 105%;
     width: 50%;
     top:10%;
@@ -109,3 +109,16 @@ marquee{
     color: white;
     background: rgb(86, 60, 133);
   }
+.extra{
+    margin-top: 115px;
+    margin-left: 350px;
+    height: 105%;
+    width: 25%;
+    position: absolute;
+    top:10%;
+    background-color: white;
+    left: 50%;
+    color: red;
+    border: solid 1px black;
+    border-radius: 10px;
+}

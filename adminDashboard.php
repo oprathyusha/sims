@@ -64,7 +64,13 @@
             </table>
         </form>
     </div>
+<<<<<<< HEAD
 
+=======
+    <div class="extra">
+        
+    </div> 
+>>>>>>> 79274423e2abb962605d424177d8de5476fa80fe
     <div id="rightSide"><br><br>
         <div id="demo">
         <?php
@@ -153,7 +159,7 @@
                             
                             <tr>
                             <td>
-                                <b>semester:</b>
+                                <b>Attendance:</b>
                             </td> 
                             <td>
                                 <input type="text" value="<?php echo $row['semester']?>" disabled>
