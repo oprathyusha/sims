@@ -208,12 +208,14 @@
 
                     }
                 }
-					
+            }	
 				
 			?>
      
 
 
+        <!-- ----------------------------edit student  ------------------------------------------        -->
+        
         <!-- ----------------------------edit student  ------------------------------------------        -->
         <?php
         if (isset($_POST['editStudent'])) {
@@ -227,11 +229,13 @@
             </center>
             <?php
         }
-        if (isset($_POST['editStudentByUSN'])) {
+        if (isset($_POST['editStudentByUSN'])) 
+        {
             $query = "select * from student where USN='$_POST[USN]'";
             $query_run = mysqli_query($connection, $query);
 
-            while ($row = mysqli_fetch_assoc($query_run)) {
+            while ($row = mysqli_fetch_assoc($query_run)) 
+            {
             ?>
                 <form action="editStudent.php" method="post">
                     <table class="data">
@@ -284,11 +288,15 @@
                             </td>
                         </tr>
                     </table>
+                    <?php
+            }
+            ?>
                     <table class="data">
                         <?php
                         $query1 = "select * from attendance where USN='$_POST[USN]'";
                         $query_run1 = mysqli_query($connection, $query1);
-                        while ($row = mysqli_fetch_assoc($query_run1)) {
+                        while ($row = mysqli_fetch_assoc($query_run1))
+                         {
                         ?>
                             <tr>
                                 <td>
@@ -298,19 +306,43 @@
                                     <input type="text" value="<?php echo $row['semester'] ?>">
                                 </td>
                             </tr>
-                            <br>
-                            <tr>
-                                <td></td>
-                                <td><input type="submit" name="edit" id="" value="save"></td>
-                            </tr>
+                           <?php
+                         }       
+                           ?>    
+                          
                     </table>
+                    <!-- -------result table------- -->
+                    <table class="data">
+                        <h1>Result</h1>
+                        <?php
+                        $query2="select * from result where USN='$_POST[USN]'";
+                        $query_run2 =mysqli_query($connection,$query2);
+                        
+                        while ($row = mysqli_fetch_assoc($query_run2))
+                        {
+                            ?>
+                            
+                            <tr>
+                            <td>
+                                <b>sgpa in <?php echo $row['semester']?></b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['sgpa']?>" disabled>
+                            </td>
+                        </tr>
+                        <?php
+                        }
+                        ?>
+                        <tr><td>
+                        <input type="submit" name="edit" id="" value="save">
+                        </td>
+                        </tr>
                 </form>
     <?php
                         }
-                    }
-                }
-            }
+            
     ?>
+     
         </div>
     </div>
 
