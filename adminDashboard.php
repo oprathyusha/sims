@@ -142,7 +142,6 @@
                         </table> 
                 
                         <!-- ----attendance table---                     -->
-
                         <table class="attendance-data">
                         <?php
                         $query1="select * from attendance where USN='$_POST[USN]'";
@@ -174,6 +173,33 @@
                     </table>
                         <?php
                         }
+                        
+                        ?> 
+                        <!-- -------result table------- -->
+                        <table class="data">
+                        <h1>Result</h1>
+                        <?php
+                        $query2="select * from result where USN='$_POST[USN]'";
+                        $query_run2 =mysqli_query($connection,$query2);
+                        
+                        while ($row = mysqli_fetch_assoc($query_run2))
+                        {
+                            ?>
+                            
+                            <tr>
+                            <td>
+                                <b>sgpa in <?php echo $row['semester']?></b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['sgpa']?>" disabled>
+                            </td>
+                        </tr>
+                       
+                    
+                    
+                    </table>
+                        <?php
+
                     }
                 }				
 			?>
@@ -272,6 +298,7 @@
                         }
                     }
                 }
+            }
     ?>
         </div>
     </div>
