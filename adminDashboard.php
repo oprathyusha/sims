@@ -65,9 +65,6 @@
             </table>
         </form>
     </div>
-    <div class="extra">
-        
-    </div> 
     <div id="rightSide"><br><br>
         <div id="demo">
         <?php
@@ -90,8 +87,10 @@
                
                 while ($row = mysqli_fetch_assoc($query_run))
                 {
-						?>
+                        ?>
+                        <!-- ----details table----->
 						 <table class="data">
+                         <h1 class="details">Details:</h1>
 							<tr>
 								<td>
 									<b>USN:</b>
@@ -135,15 +134,17 @@
                             <tr>
 								<td>
 									<b>DOB:</b>
-								</td> 
-								<td>
-									<input type="text" value="<?php echo $row['DOB']?>" disabled>
-								</td>
+                                </td> 
+                                <td>
+                                    <input type="text" value="<?php echo $row['DOB'] ?>" disabled>
+                                </td>
 							</tr>              
                         </table> 
                 
-                        <!-- ----attendance table---                     -->
-                        <table class="attendance-data">
+                        <!-- ----attendance table----->
+
+                        <table class="data">
+                        <h1 class="attendance">Attendance:</h1>
                         <?php
                         $query1="select * from attendance where USN='$_POST[USN]'";
                         $query_run1 =mysqli_query($connection,$query1);
@@ -151,19 +152,9 @@
                         while ($row = mysqli_fetch_assoc($query_run1))
                         {
                             ?>
-                            
-                            <!-- <tr>
+                        <tr>
                             <td>
-                                <b>Attendance:</b>
-                            </td> 
-                            <td>
-                                <input type="text" value="<?php echo $row['semester']?>" disabled>
-                            </td>
-                        </tr> -->
-                    
-                        < <tr>
-                            <td>
-                                <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
+                                <b>Attendance percentage in sem <?php echo $row['semester']?>:</b>
                             </td> 
                             <td>
                                 <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise']?>" disabled>
@@ -174,9 +165,11 @@
                         }
                         
                         ?> 
+
                         <!-- -------result table------- -->
+
                         <table class="data">
-                        <h1>Result</h1>
+                        <h1 class="result">Result:</h1>
                         <?php
                         $query2="select * from result where USN='$_POST[USN]'";
                         $query_run2 =mysqli_query($connection,$query2);
@@ -193,26 +186,20 @@
                                 <input type="text" value="<?php echo $row['sgpa']?>" disabled>
                             </td>
                         </tr>
-                       
-                    
-                    
                     </table>
                         <?php
 
                     }
                 }
             }	
-				
 			?>
-        <!-- ----------------------------edit student  ------------------------------------------        -->
-        
         <!-- ----------------------------edit student  ------------------------------------------        -->
         <?php
         if (isset($_POST['editStudent'])) {
         ?>
             <center>
                 <form action="" method="post" id="search-modify">
-                    <b>Enter USN to search:</b>
+                    <b>Enter USN to edit:</b>
                     <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
                     <input type="submit" name="editStudentByUSN" value="Search" id="search-placeholder">
                 </form><br><br>
@@ -228,7 +215,8 @@
             {
             ?>
                 <form action="editStudent.php" method="post">
-                    <table class="data">
+                    <table class="edit-data">
+                    <h1 class="details">Details:</h1>
                         <tr>
                             <td>
                                 <b>USN:</b>
@@ -281,14 +269,15 @@
                     <?php
             }
             ?>
-                    <table class="data">
+                    <table class="edit-data">
+                    <h1 class="attendance">Attendance:</h1>
                         <?php
                         $query1 = "select * from attendance where USN='$_POST[USN]'";
                         $query_run1 = mysqli_query($connection, $query1);
                         while ($row = mysqli_fetch_assoc($query_run1))
                          {
                         ?>
-                            < <tr>
+                            <tr>
                             <td>
                                 <b>Attendance percentage in <?php echo $row['semester']?> sem:</b>
                             </td> 
@@ -302,8 +291,8 @@
                           
                     </table>
                     <!-- -------result table------- -->
-                    <table class="data">
-                        <h1>Result</h1>
+                    <table class="edit-data">
+                        <h1 class="result">Result:</h1>
                         <?php
                         $query2="select * from result where USN='$_POST[USN]'";
                         $query_run2 =mysqli_query($connection,$query2);
@@ -324,7 +313,7 @@
                         }
                         ?>
                         <tr><td>
-                        <input type="submit" name="edit" id="" value="save">
+                        <input id="save-data" type="submit" name="edit" value="save">
                         </td>
                         </tr>
                 </form>
