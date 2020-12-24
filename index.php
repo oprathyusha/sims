@@ -33,6 +33,7 @@
             </form>
         </div>
     </div>
+    <script>
         var x= document.getElementById("admin");
         var y= document.getElementById("student");
         var z= document.getElementById("btn");
