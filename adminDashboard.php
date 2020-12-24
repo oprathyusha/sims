@@ -3,6 +3,7 @@
     <head>
         <title>Student Management System</title>
         <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time();?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "icon" href =  "icon.ico" type = "image/x-icon">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
