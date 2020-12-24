@@ -2,6 +2,7 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
+    position: relative;
     background: linear-gradient(rgba(162, 48, 255, 0.5),rgba(162, 48, 255, 0.5)), url(blue-bg.jpg);
 }
 #leftSide{
@@ -31,7 +32,7 @@ input{
     width: 50%;
     top:10%;
     background-color: white;
-    position: fixed;
+    position: absolute;
     left: 30%;
     color: red;
     border: solid 1px black;
@@ -43,7 +44,7 @@ input{
     font-weight: bold;
     letter-spacing: 0.2px;
     text-transform: capitalize;
-    font-size: 60px;
+    font-size: 5vw;
     color: white;
     transform: translateY(-5px);
 }
@@ -55,13 +56,14 @@ input{
     color: black;
 }
 .logout a{
-    text-decoration: none;
     color: azure;
     float: right;
-    transform: translateY(-120px);
+    padding: 8% 2% 2% 2%;
+    text-decoration: none;
+   transform: translateY(-120px);
 }
 marquee{
-    margin-top: 0px;
+    margin-top: 0%;
     transform: translateY(-20px);
 }
 #search-modify{

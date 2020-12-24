@@ -63,7 +63,7 @@
     
     <div id="rightSide"><br><br>
         <div id="demo">
-            <?php
+        <?php
             if(isset($_POST['searchStudent']))
             {
                 ?>
@@ -80,26 +80,35 @@
              {
                 $query="select * from student where USN='$_POST[USN]'";
                 $query_run=mysqli_query($connection,$query);
+               
                 while ($row = mysqli_fetch_assoc($query_run))
                 {
 						?>
-						<table class="data">
+						 <table class="data">
 							<tr>
 								<td>
-									<b>Roll No:</b>
+									<b>USN:</b>
 								</td> 
 								<td>
 									<input type="text" value="<?php echo $row['USN']?>" disabled>
 								</td>
 							</tr>
-							<tr>
+							 <tr>
 								<td>
-									<b>Name:</b>
+									<b>First Name:</b>
 								</td> 
 								<td>
 									<input type="text" value="<?php echo $row['firstName']?>" disabled>
 								</td>
-                            </tr>						
+                            </tr>
+                            <tr>
+								<td>
+									<b>Last  Name:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['lastName']?>" disabled>
+								</td>
+                            </tr>								
 							<tr>
 								<td>
 									<b>Phone No:</b>
@@ -107,8 +116,8 @@
 								<td>
 									<input type="text" value="<?php echo $row['phoneNumber']?>" disabled>
 								</td>
-							</tr>
-							<tr>
+							</tr> 
+							 <tr>
 								<td>
 									<b>Email:</b>
 								</td> 
@@ -116,13 +125,43 @@
 									<input type="text" value="<?php echo $row['email']?>" disabled>
 								</td>
 							</tr>
-						</table>
-						<?php
+                            <tr>
+								<td>
+									<b>DOB:</b>
+								</td> 
+								<td>
+									<input type="text" value="<?php echo $row['DOB']?>" disabled>
+								</td>
+							</tr>
+                           
+                
+                       
+                        </table>
+                       
+                        <table class="data">
+                        <?php
+                        $query1="select * from attendance where USN='$_POST[USN]'";
+                        $query_run1 =mysqli_query($connection,$query1);
+                        while ($row = mysqli_fetch_assoc($query_run1)){
+                            ?>
+                            <tr>
+                            <td>
+                                <b>attendace:</b>
+                            </td> 
+                            <td>
+                                <input type="text" value="<?php echo $row['semester']?>" disabled>
+                            </td>
+                        </tr></table>
+                        <?php
+                        }
 					}
 				}
 			?>
         </div>
     </div>
+
+
+  
     <script>
         function logout(){
         var reallyLogout=confirm("Do you really want to log out?");
