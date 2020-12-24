@@ -3,6 +3,7 @@
     <head>
         <title>Student Management System</title>
         <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time();?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel = "icon" href =  "icon.ico" type = "image/x-icon">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -163,18 +164,16 @@
 
   
     <script>
-        function logout(){
-        var reallyLogout=confirm("Do you really want to log out?");
-        if(reallyLogout){
-            location.href="logout.php";
-            }
-        }
+        /*function logout(){
+        var reallyLogout=confirm("Do you really want to log out?"); 
+        confirmed=confirm('Are you sure you want to log out?');
+        (confirmed) ? return true: return false);
         var el = document.getElementById("logout");
         if (el.addEventListener) {
                 el.addEventListener("click", logoutfunction, false);
             } else {
                 el.attachEvent('onclick', logoutfunction);
-        }  
+        }  */
     </script>
     </body>
 </html>
