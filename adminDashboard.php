@@ -133,12 +133,8 @@
 								<td>
 									<input type="text" value="<?php echo $row['DOB']?>" disabled>
 								</td>
-							</tr>
-                           
-                
-                       
-                        </table>
-                       
+							</tr>              
+                        </table>                     
                         <table class="data">
                         <?php
                         $query1="select * from attendance where USN='$_POST[USN]'";
