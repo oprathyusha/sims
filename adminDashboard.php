@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <title>Student Management System</title>
     <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time(); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +13,11 @@
 
     <?php
     session_start();
-
     $connection = mysqli_connect("localhost", "root", "");
     $db = mysqli_select_db($connection, "sims");
-
     ?>
-</head>
 
+</head>
 <body>
     <div id="header"><br>
         <center>
@@ -40,6 +37,7 @@
     <span id="topSpan">
         <marquee behavior="" direction="">This portal is available from Dec 28 </marquee>
     </span>
+    <!---------------------------------------buttons----------------------------------------->
     <div id=leftSide>
         <form action="" method="post">
             <table>
@@ -66,12 +64,9 @@
             </table>
         </form>
     </div>
-
-            <!-- -------------------------------------------search student------------------------------------------------- -->
-
-            <div id="rightSide"><br><br>
+    <!----------------------------------------------------search student--------------------------------------------------->
+        <div id="rightSide"><br><br>
         <div id="demo">
-
         <?php
     if (isset($_POST['searchStudent'])) {
     ?>
@@ -92,6 +87,7 @@
         while ($row = mysqli_fetch_assoc($query_run))
          {
         ?>
+            <!---------details table--------->
                 <table class="data">
                     <h1 class="details">Details:</h1>
                     <tr>
@@ -146,6 +142,7 @@
             <?php
         }
             ?>
+            <!---------attendance table--------->
                 <table class="data">
                 <h1 class="attendance">Attendance:</h1>
                 <?php
@@ -165,7 +162,7 @@
                 }
                 ?>
                 </table>
-            <!-- -------result table------- -->
+            <!---------result table--------->
             <table class="data">
                 <h1 class="result">Result:</h1>
                 <?php
@@ -189,7 +186,7 @@
         <?php
     }
         ?>
-    <!-- ----------------------------edit student  ----------------------------------------------------------->
+    <!---------------------------------------edit student----------------------------------------------------------->
     <?php
     if (isset($_POST['editStudent'])) {
     ?>
@@ -211,7 +208,7 @@
          {
         ?>
         <form action="editStudent.php" method="post">
-          
+            <!---------details table--------->
                 <table class="edit-data">
                     <h1 class="details">Details:</h1>
                     <tr>
@@ -265,6 +262,7 @@
             <?php
         }
             ?>
+            <!---------attendance table--------->
                 <table class="edit-data">
                     <h1 class="attendance">Attendance:</h1>
                     <?php
@@ -284,7 +282,7 @@
                     }
                     ?>
                 </table>
-            <!-- -------result table------- -->
+            <!---------result table--------->
             <table class="edit-data">
                 <h1 class="result">Result:</h1>
                 <?php
@@ -309,7 +307,7 @@
         <?php
     }
         ?>
-        <!-- ----------------------------------------- add new student-------------------------------------------------------------- -->
+        <!------------------------------------------- add new student---------------------------------------------------------------->
 
 
 
