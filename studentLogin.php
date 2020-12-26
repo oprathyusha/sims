@@ -1,6 +1,8 @@
 <?php
+session_start();
 if(isset($_POST['submit']))
     {
+        session_start();
         $connection=mysqli_connect("localhost","root","");
         $db=mysqli_select_db($connection,"sims");
         $query="select * from studentlogin where studentLoginID  ='$_POST[userID]'";
@@ -12,6 +14,9 @@ if(isset($_POST['submit']))
                 if($row['password']==$_POST['password'])
                 {
 
+                    
+							
+							 $_SESSION['USN'] =  $row['studentLoginID'];
                      header("Location: studentDashboard.php");
                     
          
@@ -19,11 +24,15 @@ if(isset($_POST['submit']))
                 }
                 else
                 {
-                echo"WRONG PASSWORD";
+               ?>
+               <script> alert("wrong password");</script>
+               <?php
             }
         }
             else
-            echo"WRONG USERID";
+            ?>
+            <script>alert("wrong loin id");</script>
+            <?php
         }
     }
     ?>
