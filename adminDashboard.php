@@ -13,6 +13,7 @@
 
     <?php
     session_start();
+    $x=" ";
     $connection = mysqli_connect("localhost", "root", "");
     $db = mysqli_select_db($connection, "sims");
     ?>
@@ -53,6 +54,11 @@
                 </tr>
                 <tr>
                     <td>
+                        <input type="submit" name="addStudentLogin" value=" Add Studentlogin credentials">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <input type="submit" name="addStudent" value="Add">
                     </td>
                 </tr>
@@ -64,6 +70,10 @@
             </table>
         </form>
     </div>
+<!--   -->
+
+
+
     <!----------------------------------------------------search student--------------------------------------------------->
         <div id="rightSide"><br><br>
         <div id="demo">
@@ -79,6 +89,8 @@
         </center>
         <?php
     }
+    ?>
+    <?php
     if (isset($_POST['searchStudentByUSN'])) 
     {
         $query = "select * from student where USN='$_POST[USN]'";
@@ -138,57 +150,200 @@
                             <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>"disabled>
                         </td>
                     </tr>
+                    <?php
+                  
+                   $query = "SELECT department.departmentName
+                   FROM department
+                   INNER JOIN student ON 
+                   department.departmentID = student.departmentID
+                   where USN='$_POST[USN]'";
+                   $query_run = mysqli_query($connection, $query);
+           
+                   while ($row = mysqli_fetch_assoc($query_run)){
+                   ?>
+                   <tr>
+                        <td>
+                            <b>sem:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="department" 
+                            value="<?php echo $row['departmentName']?>">
+                        </td>
+                    </tr>
+                    <?php
+                   }
+                   ?>
+
+                   
+           
                 </table>
             <?php
         }
             ?>
             <!---------attendance table--------->
-                <table class="data">
-                <h1 class="attendance">Attendance:</h1>
-                <?php
-                $query1 = "select * from attendance where USN='$_POST[USN]'";
-                $query_run1 = mysqli_query($connection, $query1);
-                while ($row = mysqli_fetch_assoc($query_run1)) {
-                ?>
-                    <tr>
-                        <td>
-                            <b>Attendance percentage in sem <?php echo $row['semester'] ?>: </b> 
-                        </td>
-                        <td>
-                            <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise'] ?>" disabled>
-                        </td>
-                    </tr>
-                <?php
-                }
-                ?>
-                </table>
-            <!---------result table--------->
-            <table class="data">
-                <h1 class="result">Result:</h1>
-                <?php
-                $query2 = "select * from result where USN='$_POST[USN]'";
-                $query_run2 = mysqli_query($connection, $query2);
+            <?php
+        $query = "select * from attendance where USN='$_POST[USN]'";
+        $query_run = mysqli_query($connection, $query);
 
-                while ($row = mysqli_fetch_assoc($query_run2)) {
-                ?>
+        while ($row = mysqli_fetch_assoc($query_run))
+        {
+            ?>
+                <table class="edit-data">
+                    <h1 class="attendance">Attendance:</h1>
                     <tr>
                         <td>
-                            <b>sgpa in sem <?php echo $row['semester'] ?>:</b>
+                            <b>semester 1:</b>
                         </td>
                         <td>
-                            <input type="text" value="<?php echo $row['sgpa'] ?>" disabled>
+                            <input type="text" name="semester1" value="<?php echo $row['semester1'] ?>">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <b>semester 2:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester2" value="<?php echo $row['semester2'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 3:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester3" value="<?php echo $row['semester3'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 4:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" semester4" value="<?php echo $row['semester4'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 5:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester5" value="<?php echo $row['semester5'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 6:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester6" value="<?php echo $row['semester6'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 7:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester7" value="<?php echo $row['semester7'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 8:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester8" value="<?php echo $row['semester8'] ?>">
+                        </td>
+                    </tr>
+                </table>
                 <?php
                 }
                 ?>
-            </table>
-        <?php
+            <!---------result table--------->
+            <?php
+        $query = "select * from result where USN='$_POST[USN]'";
+        $query_run = mysqli_query($connection, $query);
+
+        while ($row = mysqli_fetch_assoc($query_run))
+        {
+            ?>
+                <table class="edit-data">
+                    <h1 class="result">Result:</h1>
+                    <tr>
+                        <td>
+                            <b>semester 1:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa1" value="<?php echo $row['sgpa1'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 2:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa2" value="<?php echo $row['sgpa2'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 3:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa3" value="<?php echo $row['sgpa3'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 4:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" sgpa4" value="<?php echo $row['sgpa4'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 5:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa5" value="<?php echo $row['sgpa5'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 6:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa6" value="<?php echo $row['sgpa6'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 7:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa7" value="<?php echo $row['sgpa7'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 8:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa8" value="<?php echo $row['sgpa8'] ?>">
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" name="add" value="save">
+        </form>
+                <?php
+                }
+        
     }
         ?>
     <!---------------------------------------edit student------------------------------------------------------------>
     <?php
-    if (isset($_POST['editStudent'])) {
+    if (isset($_POST['editStudent'])) 
+    {
     ?>
         <center>
             <form action="" method="post" id="search-modify">
@@ -199,9 +354,10 @@
         </center>
         <?php
     }
+    
     if (isset($_POST['editStudentByUSN'])) 
-    {
-        $query = "select * from student where USN='$_POST[USN]'";
+    { 
+          $query = "select * from student  where USN='$_POST[USN]'";
         $query_run = mysqli_query($connection, $query);
 
         while ($row = mysqli_fetch_assoc($query_run))
@@ -259,60 +415,422 @@
                             <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>">
                         </td>
                     </tr>
+                    <?php
+                    $query2 = "SELECT department.departmentName
+                   FROM department
+                   INNER JOIN student ON 
+                   department.departmentID = student.departmentID
+                   where USN='$_POST[USN]'";
+                   $query_run2 = mysqli_query($connection, $query2);
+           
+                   while ($row2 = mysqli_fetch_assoc($query_run2))
+                   {
+                   ?>
+                   <tr>
+                        <td>
+                            <b>sem:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="department" 
+                            value="<?php echo $row2['departmentName']?>">
+                        </td>
+                    </tr>
+                    <?php
+                   }
+                   ?>
             <?php
         }
             ?>
             <!---------attendance table--------->
+            <?php
+        $query = "select * from attendance where USN='$_POST[USN]'";
+        $query_run = mysqli_query($connection, $query);
+
+        while ($row = mysqli_fetch_assoc($query_run))
+        {
+            ?>
                 <table class="edit-data">
                     <h1 class="attendance">Attendance:</h1>
-                    <?php
-                    $query1 = "select * from attendance where USN='$_POST[USN]'";
-                    $query_run1 = mysqli_query($connection, $query1);
-                    while ($row = mysqli_fetch_assoc($query_run1)) {
-                    ?>
-                        <tr>
-                            <td>
-                                <b>Attendance percentage in sem <?php echo $row['semester'] ?>:</b>
-                            </td>
-                            <td>
-                                <input type="text" value="<?php echo $row['averageAttendancePercentageSemWise'] ?>">
-                            </td>
-                        </tr>
-                    <?php
-                    }
-                    ?>
-                </table>
-            <!---------result table--------->
-            <table class="edit-data">
-                <h1 class="result">Result:</h1>
-                <?php
-                $query2 = "select * from result where USN='$_POST[USN]'";
-                $query_run2 = mysqli_query($connection, $query2);
-
-                while ($row = mysqli_fetch_assoc($query_run2)) {
-                ?>
                     <tr>
                         <td>
-                            <b>sgpa in sem <?php echo $row['semester'] ?>:</b>
+                            <b>semester 1:</b>
                         </td>
                         <td>
-                            <input type="text" value="<?php echo $row['sgpa'] ?>" >
+                            <input type="text" name="semester1" value="<?php echo $row['semester1'] ?>">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <b>semester 2:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester2" value="<?php echo $row['semester2'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 3:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester3" value="<?php echo $row['semester3'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 4:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" semester4" value="<?php echo $row['semester4'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 5:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester5" value="<?php echo $row['semester5'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 6:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester6" value="<?php echo $row['semester6'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 7:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester7" value="<?php echo $row['semester7'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 8:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester8" value="<?php echo $row['semester8'] ?>">
+                        </td>
+                    </tr>
+                </table>
+                
                 <?php
                 }
                 ?>
+            <!---------result table--------->
+            <?php
+        $query = "select * from result where USN='$_POST[USN]'";
+        $query_run = mysqli_query($connection, $query);
+
+        while ($row = mysqli_fetch_assoc($query_run))
+        {
+            ?>
+                <table class="edit-data">
+                    <h1 class="result">Result:</h1>
+                    <tr>
+                        <td>
+                            <b>semester 1:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa1" value="<?php echo $row['sgpa1'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 2:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa2" value="<?php echo $row['sgpa2'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 3:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa3" value="<?php echo $row['sgpa3'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 4:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" sgpa4" value="<?php echo $row['sgpa4'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 5:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa5" value="<?php echo $row['sgpa5'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 6:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa6" value="<?php echo $row['sgpa6'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 7:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa7" value="<?php echo $row['sgpa7'] ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 8:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa8" value="<?php echo $row['sgpa8'] ?>">
+                        </td>
+                    </tr>
                 </table>
-                <input id="save-data" type="submit" name="edit" value="save">
-        <?php
-    }
-        ?>
-        <!------------------------------------------- add new student---------------------------------------------------------------->
+                <input type="submit" name="add" value="save">
+        </form>
+                <?php
+                }
+     
+            }?>
+       
+<!-- -----------------------------------add student------------------------------------------------------------- -->
+
+<?php
+            if(isset($_POST['addStudent']))
+           {
+         ?>
+                <center><h4>Fill the details</h4></center>
+               <form action="addStudent.php" method="post">
+               <table class="data">
+               <tr>
+                   <td>student LoginID</td>
+                   <td><input type="text" name="studentLoginID" ></td>
+               </tr>
+               <tr>
+                   <td>password</td>
+                   <td><input type="text" name="password" ></td>
+               </tr>
+               <tr>
+                   <td>USN</td>
+                   <td><input type="text" name="USN" ></td>
+               </tr>
+               <tr>
+                   <td>First name</td>
+                   <td><input type="text" name="firstName"></td>
+               </tr>
+               <tr>
+                   <td>Last name</td>
+                   <td><input type="text" name="lastName" ></td>
+               </tr>
+               <tr>
+                   <td>Phone no</td>
+                   <td><input type="text" name="phoneNumber" ></td>
+               </tr>
+               <tr>
+                   <td>DOB</td>
+                   <td><input type="text" name="DOB" ></td>
+               </tr>
+               <tr>
+                   <td>Email</td>
+                   <td><input type="text" name="email" ></td>
+               </tr>
+               </tr>
+               <tr>
+                   <td>semester</td>
+                   <td><input type="text" name="semester" ></td>
+               </tr>
+               </tr>
+               <tr>
+                   <td>Department ID</td>
+                   <td><input type="text" name="departmentID" ></td>
+               </tr>
+               <tr>
+               </table>
+               <table class="edit-data">
+                    <h1 class="attendance">Attendance:</h1>
+                    <tr>
+                        <td>
+                            <b>semester 1:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 2:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester2" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 3:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester3" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 4:</b>
+                        </td>
+                        <td>
+                            <input type="text" name=" semester4" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 5:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester5" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 6:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester6">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 7:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester7">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 8:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester8" >
+                        </td>
+                    </tr>
+                </table>
+                <table class="edit-data">
+                    <h1 class="result">Result:</h1>
+                    <tr>
+                        <td>
+                            <b>semester 1:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa1" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 2:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa2" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 3:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa3" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 4:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa4">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 5:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 6:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa6">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 7:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa7" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>semester 8:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="sgpa8" ">
+                        </td>
+                    </tr>
+                </table>
 
 
-
-
-
+                  
+                
+                <input type="submit" name="add" value="add">
+               </form>
+          
+               <?php
+           }
+           ?>
+<!-- -----------------delete----------------------------------------------- -->
+<?php
+			if(isset($_POST['deleteStudent']))
+			{
+                ?>
+                <table class="data">
+				<center>
+				<form action="deleteStudent.php" method="post">
+                <tr>
+                        <td>
+                        Enter USN:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <input type="text" name="USN"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <input type="submit" name="deleteByUSN" value="Delete">
+                        </td>
+                    </tr>
+>
+				
+				</form><br><br>
+                </center>
+                </table>
+                <?php
+                
+			}
+			?>
         </div>
     </div>
 </body>
