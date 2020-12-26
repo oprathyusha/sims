@@ -163,7 +163,7 @@
                         </td>
                         <td>
                             <input type="text" name="department" 
-                            value="<?php echo $row['departmentName']?>">
+                            value="<?php echo $row['departmentName']?> " disabled>
                         </td>
                     </tr>
                     <?php
@@ -191,7 +191,7 @@
                             <b>semester 1:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester1" value="<?php echo $row['semester1'] ?>">
+                            <input type="text" name="semester1" value="<?php echo $row['semester1'] ?>" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -199,7 +199,7 @@
                             <b>semester 2:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester2" value="<?php echo $row['semester2'] ?>">
+                            <input type="text" name="semester2" value="<?php echo $row['semester2'] ?>" disabled>
                         </td>
                     </tr>
                     <tr>
@@ -207,7 +207,7 @@
                             <b>semester 3:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester3" value="<?php echo $row['semester3'] ?>">
+                            <input type="text" name="semester3" value="<?php echo $row['semester3'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -215,7 +215,7 @@
                             <b>semester 4:</b>
                         </td>
                         <td>
-                            <input type="text" name=" semester4" value="<?php echo $row['semester4'] ?>">
+                            <input type="text" name=" semester4" value="<?php echo $row['semester4'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -223,7 +223,7 @@
                             <b>semester 5:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester5" value="<?php echo $row['semester5'] ?>">
+                            <input type="text" name="semester5" value="<?php echo $row['semester5'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -231,7 +231,7 @@
                             <b>semester 6:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester6" value="<?php echo $row['semester6'] ?>">
+                            <input type="text" name="semester6" value="<?php echo $row['semester6'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -239,7 +239,7 @@
                             <b>semester 7:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester7" value="<?php echo $row['semester7'] ?>">
+                            <input type="text" name="semester7" value="<?php echo $row['semester7'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -247,7 +247,7 @@
                             <b>semester 8:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester8" value="<?php echo $row['semester8'] ?>">
+                            <input type="text" name="semester8" value="<?php echo $row['semester8'] ?>"disabled>
                         </td>
                     </tr>
                 </table>
@@ -269,7 +269,7 @@
                             <b>semester 1:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa1" value="<?php echo $row['sgpa1'] ?>">
+                            <input type="text" name="sgpa1" value="<?php echo $row['sgpa1'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -277,7 +277,7 @@
                             <b>semester 2:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa2" value="<?php echo $row['sgpa2'] ?>">
+                            <input type="text" name="sgpa2" value="<?php echo $row['sgpa2'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -285,7 +285,7 @@
                             <b>semester 3:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa3" value="<?php echo $row['sgpa3'] ?>">
+                            <input type="text" name="sgpa3" value="<?php echo $row['sgpa3'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -293,7 +293,7 @@
                             <b>semester 4:</b>
                         </td>
                         <td>
-                            <input type="text" name=" sgpa4" value="<?php echo $row['sgpa4'] ?>">
+                            <input type="text" name=" sgpa4" value="<?php echo $row['sgpa4'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -301,7 +301,7 @@
                             <b>semester 5:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa5" value="<?php echo $row['sgpa5'] ?>">
+                            <input type="text" name="sgpa5" value="<?php echo $row['sgpa5'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -309,7 +309,7 @@
                             <b>semester 6:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa6" value="<?php echo $row['sgpa6'] ?>">
+                            <input type="text" name="sgpa6" value="<?php echo $row['sgpa6'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -317,7 +317,7 @@
                             <b>semester 7:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa7" value="<?php echo $row['sgpa7'] ?>">
+                            <input type="text" name="sgpa7" value="<?php echo $row['sgpa7'] ?>"disabled>
                         </td>
                     </tr>
                     <tr>
@@ -325,11 +325,11 @@
                             <b>semester 8:</b>
                         </td>
                         <td>
-                            <input type="text" name="sgpa8" value="<?php echo $row['sgpa8'] ?>">
+                            <input type="text" name="sgpa8" value="<?php echo $row['sgpa8'] ?>"disabled>
                         </td>
                     </tr>
                 </table>
-                <input type="submit" name="add" value="save">
+                
         </form>
                 <?php
                 }

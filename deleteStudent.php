@@ -11,7 +11,7 @@
         $query = "delete from studentLogin  where USN = '$_POST[USN]'";
         $query_run = mysqli_query($connection,$query);
 
-        header("Location: adminDashboard.php")
+        header("Location: adminDashboard.php");
 
 		?>
 	 	
