@@ -66,11 +66,9 @@
             </table>
         </form>
     </div>
-<!--   -->
 
+<!----------------------------------------------------search student--------------------------------------------------->
 
-
-    <!----------------------------------------------------search student--------------------------------------------------->
         <div id="rightSide"><br><br>
         <div id="demo">
         <?php
@@ -159,24 +157,20 @@
                    ?>
                    <tr>
                         <td>
-                            <b>sem:</b>
+                            <b>Semester:</b>
                         </td>
                         <td>
-                            <input type="text" name="department" 
-                            value="<?php echo $row['departmentName']?> " disabled>
+                            <input type="text" name="department" value="<?php echo $row['departmentName']?> " disabled>
                         </td>
                     </tr>
                     <?php
                    }
-                   ?>
-
-                   
-           
+                   ?>  
                 </table>
             <?php
         }
             ?>
-            <!---------attendance table--------->
+
             <?php
         $query = "select * from attendance where USN='$_POST[USN]'";
         $query_run = mysqli_query($connection, $query);
@@ -184,11 +178,12 @@
         while ($row = mysqli_fetch_assoc($query_run))
         {
             ?>
-                <table class="edit-data">
+            <!---------attendance table--------->
+                <table class="data">
                     <h1 class="attendance">Attendance:</h1>
                     <tr>
                         <td>
-                            <b>semester 1:</b>
+                            <b>Semester 1:</b>
                         </td>
                         <td>
                             <input type="text" name="semester1" value="<?php echo $row['semester1'] ?>" disabled>
@@ -196,7 +191,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 2:</b>
+                            <b>Semester 2:</b>
                         </td>
                         <td>
                             <input type="text" name="semester2" value="<?php echo $row['semester2'] ?>" disabled>
@@ -204,7 +199,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 3:</b>
+                            <b>Semester 3:</b>
                         </td>
                         <td>
                             <input type="text" name="semester3" value="<?php echo $row['semester3'] ?>"disabled>
@@ -212,7 +207,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 4:</b>
+                            <b>Semester 4:</b>
                         </td>
                         <td>
                             <input type="text" name=" semester4" value="<?php echo $row['semester4'] ?>"disabled>
@@ -220,7 +215,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 5:</b>
+                            <b>Semester 5:</b>
                         </td>
                         <td>
                             <input type="text" name="semester5" value="<?php echo $row['semester5'] ?>"disabled>
@@ -228,7 +223,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 6:</b>
+                            <b>Semester 6:</b>
                         </td>
                         <td>
                             <input type="text" name="semester6" value="<?php echo $row['semester6'] ?>"disabled>
@@ -236,7 +231,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 7:</b>
+                            <b>Semester 7:</b>
                         </td>
                         <td>
                             <input type="text" name="semester7" value="<?php echo $row['semester7'] ?>"disabled>
@@ -244,17 +239,17 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 8:</b>
+                            <b>Semester 8:</b>
                         </td>
                         <td>
                             <input type="text" name="semester8" value="<?php echo $row['semester8'] ?>"disabled>
                         </td>
                     </tr>
                 </table>
-                <?php
-                }
-                ?>
-            <!---------result table--------->
+            <?php
+        }
+            ?>
+            
             <?php
         $query = "select * from result where USN='$_POST[USN]'";
         $query_run = mysqli_query($connection, $query);
@@ -262,11 +257,12 @@
         while ($row = mysqli_fetch_assoc($query_run))
         {
             ?>
-                <table class="edit-data">
+            <!---------result table--------->
+                <table class="data">
                     <h1 class="result">Result:</h1>
                     <tr>
                         <td>
-                            <b>semester 1:</b>
+                            <b>Semester 1:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa1" value="<?php echo $row['sgpa1'] ?>"disabled>
@@ -274,7 +270,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 2:</b>
+                            <b>Semester 2:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa2" value="<?php echo $row['sgpa2'] ?>"disabled>
@@ -282,7 +278,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 3:</b>
+                            <b>Semester 3:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa3" value="<?php echo $row['sgpa3'] ?>"disabled>
@@ -290,7 +286,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 4:</b>
+                            <b>Semester 4:</b>
                         </td>
                         <td>
                             <input type="text" name=" sgpa4" value="<?php echo $row['sgpa4'] ?>"disabled>
@@ -298,7 +294,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 5:</b>
+                            <b>Semester 5:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa5" value="<?php echo $row['sgpa5'] ?>"disabled>
@@ -306,7 +302,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 6:</b>
+                            <b>Semester 6:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa6" value="<?php echo $row['sgpa6'] ?>"disabled>
@@ -314,7 +310,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 7:</b>
+                            <b>Semester 7:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa7" value="<?php echo $row['sgpa7'] ?>"disabled>
@@ -322,21 +318,20 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 8:</b>
+                            <b>Semester 8:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa8" value="<?php echo $row['sgpa8'] ?>"disabled>
                         </td>
                     </tr>
                 </table>
-                
-        </form>
-                <?php
-                }
-        
+            <?php
+        }
     }
-        ?>
-    <!---------------------------------------edit student------------------------------------------------------------>
+            ?>
+
+<!---------------------------------------edit student------------------------------------------------------------>
+
     <?php
     if (isset($_POST['editStudent'])) 
     {
@@ -345,7 +340,7 @@
             <form action="" method="post" id="search-modify">
                 <b>Enter USN to edit:</b>
                 <input type="text" name="USN" id="usn-placeholder" placeholder="Enter your USN" required>
-                <input type="submit" name="editStudentByUSN" value="Search" id="search-placeholder">
+                <input type="submit" name="editStudentByUSN" value="Edit" id="search-placeholder">
             </form><br><br>
         </center>
         <?php
@@ -360,6 +355,7 @@
          {
         ?>
         <form action="editStudent.php" method="post">
+            <center><h2>Edit the details</h2></center> 
             <!---------details table--------->
                 <table class="edit-data">
                     <h1 class="details">Details:</h1>
@@ -424,7 +420,7 @@
                    ?>
                    <tr>
                         <td>
-                            <b>sem:</b>
+                            <b>Semester:</b>
                         </td>
                         <td>
                             <input type="text" name="department" 
@@ -449,7 +445,7 @@
                     <h1 class="attendance">Attendance:</h1>
                     <tr>
                         <td>
-                            <b>semester 1:</b>
+                            <b>Semester 1:</b>
                         </td>
                         <td>
                             <input type="text" name="semester1" value="<?php echo $row['semester1'] ?>">
@@ -457,7 +453,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 2:</b>
+                            <b>Semester 2:</b>
                         </td>
                         <td>
                             <input type="text" name="semester2" value="<?php echo $row['semester2'] ?>">
@@ -465,7 +461,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 3:</b>
+                            <b>Semester 3:</b>
                         </td>
                         <td>
                             <input type="text" name="semester3" value="<?php echo $row['semester3'] ?>">
@@ -473,7 +469,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 4:</b>
+                            <b>Semester 4:</b>
                         </td>
                         <td>
                             <input type="text" name=" semester4" value="<?php echo $row['semester4'] ?>">
@@ -481,7 +477,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 5:</b>
+                            <b>Semester 5:</b>
                         </td>
                         <td>
                             <input type="text" name="semester5" value="<?php echo $row['semester5'] ?>">
@@ -489,7 +485,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 6:</b>
+                            <b>Semester 6:</b>
                         </td>
                         <td>
                             <input type="text" name="semester6" value="<?php echo $row['semester6'] ?>">
@@ -497,7 +493,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 7:</b>
+                            <b>Semester 7:</b>
                         </td>
                         <td>
                             <input type="text" name="semester7" value="<?php echo $row['semester7'] ?>">
@@ -505,7 +501,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 8:</b>
+                            <b>Semester 8:</b>
                         </td>
                         <td>
                             <input type="text" name="semester8" value="<?php echo $row['semester8'] ?>">
@@ -513,9 +509,9 @@
                     </tr>
                 </table>
                 
-                <?php
-                }
-                ?>
+            <?php
+        }
+            ?>
             <!---------result table--------->
             <?php
         $query = "select * from result where USN='$_POST[USN]'";
@@ -528,7 +524,7 @@
                     <h1 class="result">Result:</h1>
                     <tr>
                         <td>
-                            <b>semester 1:</b>
+                            <b>Semester 1:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa1" value="<?php echo $row['sgpa1'] ?>">
@@ -536,7 +532,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 2:</b>
+                            <b>Semester 2:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa2" value="<?php echo $row['sgpa2'] ?>">
@@ -544,7 +540,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 3:</b>
+                            <b>Semester 3:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa3" value="<?php echo $row['sgpa3'] ?>">
@@ -552,7 +548,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 4:</b>
+                            <b>Semester 4:</b>
                         </td>
                         <td>
                             <input type="text" name=" sgpa4" value="<?php echo $row['sgpa4'] ?>">
@@ -560,7 +556,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 5:</b>
+                            <b>Semester 5:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa5" value="<?php echo $row['sgpa5'] ?>">
@@ -568,7 +564,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 6:</b>
+                            <b>Semester 6:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa6" value="<?php echo $row['sgpa6'] ?>">
@@ -576,7 +572,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 7:</b>
+                            <b>Semester 7:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa7" value="<?php echo $row['sgpa7'] ?>">
@@ -584,71 +580,71 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 8:</b>
+                            <b>Semester 8:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa8" value="<?php echo $row['sgpa8'] ?>">
                         </td>
                     </tr>
                 </table>
-                <input type="submit" name="add" value="save">
+                <input id="save-btn" type="submit" name="add" value="Save">
         </form>
-                <?php
-                }
-     
-            }?>
+            <?php
+        }
+    }
+            ?>
        
-<!-- -----------------------------------add student------------------------------------------------------------- -->
+<!-------------------------------------add student--------------------------------------------------------------->
 
-<?php
+        <?php
             if(isset($_POST['addStudent']))
            {
-         ?>
-                <center><h4>Fill the details</h4></center>
-               <form action="addStudent.php" method="post">
-               <table class="data">
-               
-               <tr>
-                   <td>USN</td>
-                   <td><input type="text" name="USN" ></td>
-               </tr>
-               <tr>
-                   <td>First name</td>
-                   <td><input type="text" name="firstName"></td>
-               </tr>
-               <tr>
-                   <td>Last name</td>
-                   <td><input type="text" name="lastName" ></td>
-               </tr>
-               <tr>
-                   <td>Phone no</td>
-                   <td><input type="text" name="phoneNumber" ></td>
-               </tr>
-               <tr>
-                   <td>DOB</td>
-                   <td><input type="text" name="DOB" ></td>
-               </tr>
-               <tr>
-                   <td>Email</td>
-                   <td><input type="text" name="email" ></td>
-               </tr>
-               </tr>
-               <tr>
-                   <td>semester</td>
-                   <td><input type="text" name="semester" ></td>
-               </tr>
-               </tr>
-               <tr>
-                   <td>Department ID</td>
-                   <td><input type="text" name="departmentID" ></td>
-               </tr>
-               <tr>
-               </table>
-               <table class="edit-data">
+        ?>
+                <center><h2>Fill the details</h2></center>
+                <br>
+                <form action="addStudent.php" method="post">
+            <!---------details table--------->
+                <table class="add-data">
+                <h1 class="details">Details:</h1>     
+                <tr>
+                    <td><b>USN:</b></td>
+                    <td><input type="text" name="USN" ></td>
+                </tr>
+                <tr>
+                    <td><b>First Name:</b></td>
+                    <td><input type="text" name="firstName"></td>
+                </tr>
+                <tr>
+                    <td><b>Last Name:</b></td>
+                    <td><input type="text" name="lastName" ></td>
+                </tr>
+                <tr>
+                    <td><b>Phone No:</b></td>
+                    <td><input type="text" name="phoneNumber" ></td>
+                </tr>
+                <tr>
+                    <td><b>DOB:</b></td>
+                    <td><input type="text" name="DOB" ></td>
+                </tr>
+                <tr>
+                    <td><b>Email:</b></td>
+                    <td><input type="text" name="email" ></td>
+                </tr>
+                <tr>
+                    <td><b>Semester:</b></td>
+                    <td><input type="text" name="semester" ></td>
+                </tr>
+                <tr>
+                    <td><b>Department ID:</b></td>
+                    <td><input type="text" name="departmentID" ></td>
+                </tr>
+                </table>
+            <!---------attendance table--------->
+                <table class="add-data">
                     <h1 class="attendance">Attendance:</h1>
                     <tr>
                         <td>
-                            <b>semester 1:</b>
+                            <b>Semester 1:</b>
                         </td>
                         <td>
                             <input type="text" name="semester1">
@@ -656,7 +652,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 2:</b>
+                            <b>Semester 2:</b>
                         </td>
                         <td>
                             <input type="text" name="semester2" >
@@ -664,7 +660,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 3:</b>
+                            <b>Semester 3:</b>
                         </td>
                         <td>
                             <input type="text" name="semester3" >
@@ -672,7 +668,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 4:</b>
+                            <b>Semester 4:</b>
                         </td>
                         <td>
                             <input type="text" name=" semester4" >
@@ -680,7 +676,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 5:</b>
+                            <b>Semester 5:</b>
                         </td>
                         <td>
                             <input type="text" name="semester5" >
@@ -688,7 +684,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 6:</b>
+                            <b>Semester 6:</b>
                         </td>
                         <td>
                             <input type="text" name="semester6">
@@ -696,7 +692,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 7:</b>
+                            <b>Semester 7:</b>
                         </td>
                         <td>
                             <input type="text" name="semester7">
@@ -704,18 +700,19 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 8:</b>
+                            <b>Semester 8:</b>
                         </td>
                         <td>
                             <input type="text" name="semester8" >
                         </td>
                     </tr>
                 </table>
-                <table class="edit-data">
+            <!---------result table--------->
+                <table class="add-data">
                     <h1 class="result">Result:</h1>
                     <tr>
                         <td>
-                            <b>semester 1:</b>
+                            <b>Semester 1:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa1" >
@@ -723,7 +720,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 2:</b>
+                            <b>Semester 2:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa2" >
@@ -731,7 +728,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 3:</b>
+                            <b>Semester 3:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa3" >
@@ -739,7 +736,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 4:</b>
+                            <b>Semester 4:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa4">
@@ -747,7 +744,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 5:</b>
+                            <b>Semester 5:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa5">
@@ -755,7 +752,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 6:</b>
+                            <b>Semester 6:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa6">
@@ -763,7 +760,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 7:</b>
+                            <b>Semester 7:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa7" >
@@ -771,53 +768,31 @@
                     </tr>
                     <tr>
                         <td>
-                            <b>semester 8:</b>
+                            <b>Semester 8:</b>
                         </td>
                         <td>
                             <input type="text" name="sgpa8" ">
                         </td>
                     </tr>
                 </table>
-
-
-                  
-                
-                <input type="submit" name="add" value="add">
+                <input id="add-btn" type="submit" name="add" value="Add">
                </form>
-          
-               <?php
+            <?php
            }
            ?>
-<!-- -----------------delete----------------------------------------------- -->
-<?php
+<!-------------------delete student------------------------------------------------->
+        <?php
 			if(isset($_POST['deleteStudent']))
 			{
-                ?>
-                <table class="data">
+        ?>
 				<center>
-				<form action="deleteStudent.php" method="post">
-                <tr>
-                        <td>
-                        Enter USN:
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <input type="text" name="USN"
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        <input type="submit" name="deleteByUSN" value="Delete">
-                        </td>
-                    </tr>
->
-				
+				<form action="deleteStudent.php" method="post" id="search-modify">
+                    <b>Enter USN to delete:</b>
+                    <input type="text" placeholder="Enter your USN" name="USN" id="usn-placeholder" required>
+                    <input id="search-placeholder" type="submit" name="deleteByUSN" value="Delete" >
 				</form><br><br>
                 </center>
-                </table>
-                <?php
-                
+            <?php
 			}
 			?>
         </div>

@@ -1,4 +1,3 @@
-
 <?php 
 		$connection = mysqli_connect("localhost","root","");
 		$db = mysqli_select_db($connection,"sims");
@@ -13,6 +12,10 @@
 
         header("Location: adminDashboard.php");
 
-		?>
+        ?>
+ <script type="text/javascript">
+	alert("Details Deleted successfully.");
+	window.location.href = "adminDashboard.php"; //redirect to admindashboard
+</script>
 	 	
 	

@@ -91,7 +91,7 @@ marquee{
     margin-right: 10px;
     width: 35%;
     border-radius: 0px;
-    background: white;
+    background: rgba(114, 114, 114, 0.158);
     cursor: text;
     border: solid 1px black;
 }
@@ -132,7 +132,31 @@ marquee{
     color: black;
     cursor: text;
 }
-#save-data{
+.add-data{
+    margin-top: -20px;
+    margin-left: 30px;
+    color: black;
+}
+.add-data input{
+    margin-left: 50px;
+    background: rgba(110, 110, 110, 0.281);
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+    border-color: black;
+    color: black;
+    cursor: text;
+}
+#save-btn{
+    cursor: pointer;
+    background: linear-gradient( to right,rgb(190, 84, 123),rgb(86, 60, 133));
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 0 2px 2px #d1d1d136;
+    margin-left: 450px;
+    width: 10%;
+}
+#add-btn{
     cursor: pointer;
     background: linear-gradient( to right,rgb(190, 84, 123),rgb(86, 60, 133));
     border-radius: 30px;

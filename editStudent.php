@@ -16,11 +16,9 @@
 	   sgpa6=$_POST[sgpa6],sgpa7=$_POST[sgpa7],sgpa8=$_POST[sgpa8] where USN='$_POST[USN]'";
  	  $query_run = mysqli_query($connection,$query);
 
-
-
 // ?>
 
- <script type="text/javascript">
-	alert("Details edited successfully.");
+<script type="text/javascript">
+	alert("Details Edited successfully.");
 	window.location.href = "adminDashboard.php"; //redirect to admindashboard
 </script>
