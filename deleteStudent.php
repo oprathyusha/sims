@@ -8,7 +8,10 @@
         $query_run = mysqli_query($connection,$query);
 		$query = "delete from result  where USN = '$_POST[USN]'";
         $query_run = mysqli_query($connection,$query);
-        // header("Location: adminDashboard.php")
+        $query = "delete from studentLogin  where USN = '$_POST[USN]'";
+        $query_run = mysqli_query($connection,$query);
+
+        header("Location: adminDashboard.php")
 
 		?>
 	 	
