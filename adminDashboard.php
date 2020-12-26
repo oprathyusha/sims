@@ -52,11 +52,7 @@
                         <input type="submit" name="editStudent" value="Edit">
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <input type="submit" name="addStudentLogin" value=" Add Studentlogin credentials">
-                    </td>
-                </tr>
+               
                 <tr>
                     <td>
                         <input type="submit" name="addStudent" value="Add">
