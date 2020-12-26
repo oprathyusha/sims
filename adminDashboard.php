@@ -607,14 +607,7 @@
                 <center><h4>Fill the details</h4></center>
                <form action="addStudent.php" method="post">
                <table class="data">
-               <tr>
-                   <td>student LoginID</td>
-                   <td><input type="text" name="studentLoginID" ></td>
-               </tr>
-               <tr>
-                   <td>password</td>
-                   <td><input type="text" name="password" ></td>
-               </tr>
+               
                <tr>
                    <td>USN</td>
                    <td><input type="text" name="USN" ></td>
