@@ -69,8 +69,10 @@
 
 <!----------------------------------------------------search student--------------------------------------------------->
 
-        <div id="rightSide"><br><br>
-        <div id="demo">
+        <div id="rightSide">
+            <br><br>
+            
+        <div id="demo" >
         <?php
     if (isset($_POST['searchStudent'])) {
     ?>
