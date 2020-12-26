@@ -3,7 +3,7 @@
 
 <head>
     <title>Student Management System</title>
-    <link rel="stylesheet" href="adminDashboard.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="studentDashboard.css?v=<?php echo time(); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,26 +29,25 @@
             <div class="info">
                 <b><i class="fa fa-user" aria-hidden="true"></i> UserID:&nbsp;</b><?php echo $_SESSION['USN']; ?>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               
             </div>
             <div class="logout">
                 <a href="logout.php" onclick="logout()"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout<a>
             </div>
         </center>
     </div>
+    <span id="topSpan">
+        <marquee behavior="" direction="">This portal is available from Dec 28 </marquee>
+    </span>
 
     <div id="rightSide"><br><br>
         <div id="demo">
-<?php
-    
-    
+    <?php
         $query = "select * from student where studentLoginID='$_SESSION[USN]'";
         $query_run = mysqli_query($connection, $query);
 
         while ($row = mysqli_fetch_assoc($query_run))
          {
         ?>
-         
             <!---------details table--------->
                 <table class="data">
                     <h1 class="details">Details:</h1>
@@ -100,8 +99,8 @@
                             <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>"disabled>
                         </td>
                     </tr>
-                    <?php
-                  
+
+                <?php
                    $query = "SELECT department.departmentName
                    FROM department
                    INNER JOIN student ON 
@@ -110,8 +109,8 @@
                    $query_run = mysqli_query($connection, $query);
            
                    while ($row = mysqli_fetch_assoc($query_run)){
-                   ?>
-                   <tr>
+                ?>
+                    <tr>
                         <td>
                             <b>Semester:</b>
                         </td>
@@ -119,9 +118,9 @@
                             <input type="text" name="department" value="<?php echo $row['departmentName']?> " disabled>
                         </td>
                     </tr>
-                    <?php
-                   }
-                   ?>  
+                <?php
+                }
+                ?>  
                 </table>
             <?php
         }
