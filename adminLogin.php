@@ -24,11 +24,16 @@
                 }
                 else
                 {
-                echo"WRONG PASSWORD";
+                ?>
+                <script>alert("Wrong password");
+                </script>
+                <?php
             }
         }
             else
-            echo"WRONG USERID";
+            ?>
+            <script>alert("Wrong user id");</script>
+            <?php
         }
     }
     ?>
