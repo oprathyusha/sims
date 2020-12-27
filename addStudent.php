@@ -26,6 +26,9 @@ $userID =$_SESSION['userid'];
 	$_POST[sgpa6],$_POST[sgpa7],$_POST[sgpa8],$_POST[departmentID])";
 	$query_run = mysqli_query($connection,$query);
 ?>
+	<script type="text/javascript">
+	alert("Details Added successfully.");
+	</script>
 <?php
 		}
 		?>
