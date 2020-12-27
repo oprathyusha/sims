@@ -147,6 +147,14 @@
                             <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>"disabled>
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <b>semester:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester" value="<?php echo $row['semester'] ?>"disabled>
+                        </td>
+                    </tr>
                     <?php
                   
                    $query = "SELECT department.departmentName
@@ -160,7 +168,7 @@
                    ?>
                    <tr>
                         <td>
-                            <b>Semester:</b>
+                            <b>Department :</b>
                         </td>
                         <td>
                             <input type="text" name="department" value="<?php echo $row['departmentName']?> " disabled>
@@ -417,8 +425,16 @@
                             <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <b>semester:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="semester" value="<?php echo $row['semester'] ?>">
+                        </td>
+                    </tr>
                     <?php
-                    $query2 = "SELECT department.departmentName
+                    $query2 = "SELECT department.departmentName,department.departmentID
                    FROM department
                    INNER JOIN student ON 
                    department.departmentID = student.departmentID
@@ -430,11 +446,20 @@
                    ?>
                    <tr>
                         <td>
-                            <b>Semester:</b>
+                            <b>DepartmentID:</b>
+                        </td>
+                        <td>
+                            <input type="text" name="departmentID" 
+                            value="<?php echo $row2['departmentID']?>" >
+                        </td>
+                    </tr>
+                   <tr>
+                        <td>
+                            <b>Department:</b>
                         </td>
                         <td>
                             <input type="text" name="department" 
-                            value="<?php echo $row2['departmentName']?>">
+                            value="<?php echo $row2['departmentName']?>" disabled>
                         </td>
                     </tr>
                     <?php

@@ -7,7 +7,9 @@
 if(mysqli_num_rows($query_run)>0)
 {
 	$query = "update student set firstName='$_POST[firstName]',lastName='$_POST[lastName]',
-	phoneNumber=$_POST[phoneNumber],email='$_POST[email]',DOB='$_POST[DOB]' where USN='$_POST[USN]'";
+	phoneNumber=$_POST[phoneNumber],email='$_POST[email]',DOB='$_POST[DOB]',semester=$_POST[semester],
+	departmentID=$_POST[departmentID]
+	 where USN='$_POST[USN]'";
 	$query_run = mysqli_query($connection,$query);
 
 	$query  = "update attendance set semester1=$_POST[semester1],semester2=$_POST[semester2],
