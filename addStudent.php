@@ -15,6 +15,7 @@ $userID =$_SESSION['userid'];
 		{
 			$query = "insert into student values('$_POST[USN]','$_POST[firstName]','$_POST[lastName]',$_POST[phoneNumber],
 			'$_POST[email]','$_POST[DOB]',$_POST[semester],'$userID','$_POST[USN]',$_POST[departmentID])";
+			$query_run = mysqli_query($connection,$query);
 		$query  = " insert into  attendance values( '$_POST[USN]','$_POST[firstName] $_POST[lastName]',$_POST[semester1],$_POST[semester2],
 	$_POST[semester3],$_POST[semester4],$_POST[semester5],
 	$_POST[semester6],$_POST[semester7],$_POST[semester8],$_POST[departmentID])";
