@@ -16,7 +16,10 @@ if(isset($_POST['submit']))
 
                     
 							
-							 $_SESSION['USN'] =  $row['studentLoginID'];
+                             $_SESSION['USN'] =  $row['studentLoginID'];
+                             ?>
+                             <script>alert("login successful");</script>
+                             <?php
                      header("Location: studentDashboard.php");
                     
          
@@ -31,7 +34,7 @@ if(isset($_POST['submit']))
         }
             else
             ?>
-            <script>alert("wrong loin id");</script>
+            <script>alert("wrong login id");</script>
             <?php
         }
     }
