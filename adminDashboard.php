@@ -387,7 +387,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>USN:</b>
                         </td>
                         <td>
-                            <input type="text" name="USN" value="<?php echo $row['USN'] ?>" required>
+                            <input type="text" name="USN" value="<?php echo $row['USN'] ?>">
                         </td>
                     </tr>
                     <tr>
@@ -395,7 +395,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>First Name:</b>
                         </td>
                         <td>
-                            <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>" required>
+                            <input type="text" name="firstName" value="<?php echo $row['firstName'] ?>">
                         </td>
                     </tr>
                     <tr>
@@ -403,7 +403,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>Last Name:</b>
                         </td>
                         <td>
-                            <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>" >
+                            <input type="text" name="lastName" value="<?php echo $row['lastName'] ?>">
                         </td>
                     </tr>
                     <tr>
@@ -411,7 +411,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>Phone No:</b>
                         </td>
                         <td>
-                            <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>"required>
+                            <input type="text" name=" phoneNumber" value="<?php echo $row['phoneNumber'] ?>">
                         </td>
                     </tr>
                     <tr>
@@ -419,7 +419,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>Email:</b>
                         </td>
                         <td>
-                            <input type="text" name="email" value="<?php echo $row['email'] ?>" required>
+                            <input type="text" name="email" value="<?php echo $row['email'] ?>">
                         </td>
                     </tr>
                     <tr>
@@ -427,7 +427,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>DOB:</b>
                         </td>
                         <td>
-                            <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>"required>
+                            <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>">
                         </td>
                     </tr>
                     <tr>
@@ -435,7 +435,7 @@ if(mysqli_num_rows($query_run)>0)
                             <b>semester:</b>
                         </td>
                         <td>
-                            <input type="text" name="semester" value="<?php echo $row['semester'] ?>" required>
+                            <input type="text" name="semester" value="<?php echo $row['semester'] ?>">
                         </td>
                     </tr>
                     <?php
@@ -648,11 +648,11 @@ if(mysqli_num_rows($query_run)>0)
                 <h1 class="details">Details:</h1>     
                 <tr>
                     <td><b>USN:</b></td>
-                    <td><input type="text" name="USN" required></td>
+                    <td><input type="text" name="USN" ></td>
                 </tr>
                 <tr>
                     <td><b>First Name:</b></td>
-                    <td><input type="text" name="firstName" required></td>
+                    <td><input type="text" name="firstName"></td>
                 </tr>
                 <tr>
                     <td><b>Last Name:</b></td>
@@ -660,15 +660,15 @@ if(mysqli_num_rows($query_run)>0)
                 </tr>
                 <tr>
                     <td><b>Phone No:</b></td>
-                    <td><input type="text" name="phoneNumber" required></td>
+                    <td><input type="text" name="phoneNumber" ></td>
                 </tr>
                 <tr>
                     <td><b>DOB:</b></td>
-                    <td><input type="text" name="DOB" required ></td>
+                    <td><input type="text" name="DOB" ></td>
                 </tr>
                 <tr>
                     <td><b>Email:</b></td>
-                    <td><input type="text" name="email" required></td>
+                    <td><input type="text" name="email" ></td>
                 </tr>
                 <tr>
                     <td><b>Semester:</b></td>
@@ -676,7 +676,7 @@ if(mysqli_num_rows($query_run)>0)
                 </tr>
                 <tr>
                     <td><b>Department ID:</b></td>
-                    <td><input type="text" name="departmentID" required></td>
+                    <td><input type="text" name="departmentID" ></td>
                 </tr>
                 </table>
             <!---------attendance table--------->
