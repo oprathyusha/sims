@@ -14,7 +14,6 @@ if(mysqli_num_rows($query_run)>0)
     $query_run = mysqli_query($connection,$query);
     $query = "delete from studentLogin  where USN = '$_POST[USN]'";
     $query_run = mysqli_query($connection,$query);
-   
     ?>
     <script type="text/javascript">
     alert("Details Deleted successfully.");

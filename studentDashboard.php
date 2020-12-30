@@ -99,15 +99,6 @@
                             <input type="text" name="DOB" value="<?php echo $row['DOB'] ?>"disabled>
                         </td>
                     </tr>
-                    </tr>
-                            <tr>
-                                <td>
-                                    <b>semester:</b>
-                                </td>
-                                <td>
-                                    <input type="text" name="semester" value="<?php echo $row['semester'] ?>"disabled>
-                                </td>
-                            </tr>
 
                 <?php
                    $query = "SELECT department.departmentName
@@ -121,7 +112,7 @@
                 ?>
                     <tr>
                         <td>
-                            <b>Department:</b>
+                            <b>Semester:</b>
                         </td>
                         <td>
                             <input type="text" name="department" value="<?php echo $row['departmentName']?> " disabled>
