@@ -13,7 +13,6 @@
 
     <?php
     session_start();
-    $x=" ";
     $connection = mysqli_connect("localhost", "root", "");
     $db = mysqli_select_db($connection, "sims");
     ?>
@@ -350,8 +349,7 @@ if(mysqli_num_rows($query_run)>0)
             <?php
         }
     }
-
-            ?>
+             ?>
 
 <!---------------------------------------edit student------------------------------------------------------------>
 

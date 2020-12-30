@@ -13,17 +13,11 @@ if(isset($_POST['submit']))
             {
                 if($row['password']==$_POST['password'])
                 {
-
-                    
-							
-                             $_SESSION['USN'] =  $row['studentLoginID'];
+                     $_SESSION['USN'] =  $row['studentLoginID'];
                              ?>
                              <script>alert("login successful");</script>
                              <?php
                      header("Location: studentDashboard.php");
-                    
-         
-         
                 }
                 else
                 {

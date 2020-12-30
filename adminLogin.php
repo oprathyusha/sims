@@ -19,16 +19,8 @@
                 {
                     $_SESSION['userid']=$row['userID'];
                     $_SESSION['name']=$row['adminName'];
-                    ?>
-                    <script>alert("login successfull");</script>
-                    <?php
                     header("Location: adminDashboard.php");
-                 
-                  
-               
-                    
-         
-                }
+                 }
                 else
                 {
                 ?>
